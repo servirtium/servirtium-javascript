@@ -1,0 +1,29 @@
+## Interaction <%= interactionSequence -%>: <%= requestMethod -%> <%=requestPath -%>
+
+### Request headers recorded for playback:
+
+```
+<% Object.keys(requestHeaders).forEach(function(key){ -%>
+<%= key %>: <%= requestHeaders[key] %>
+<% }); -%>
+```
+
+### Request body recorded for playback ():
+
+```
+<%= requestBody %>
+```
+
+### Response headers recorded for playback:
+
+```
+<% Object.keys(responseHeaders).forEach(function(key){ -%>
+<%= key %>: <%= responseHeaders[key] %>
+<% }); -%>
+```
+
+### Response body recorded for playback (<%= responseStatus -%>: <%= responseContentType -%>):
+
+```
+<%= responseBody %>
+```
