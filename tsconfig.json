@@ -5,7 +5,8 @@
     "declaration": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "rootDir": ".",
+    "rootDir": "./src",
+    "baseUrl": "./",
     "typeRoots": ["./node_modules/@types"],
     "types": ["jest", "node"]
   },

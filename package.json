@@ -2,9 +2,10 @@
   "name": "@servirtium/recorder",
   "version": "1.0.0",
   "description": "This is the demo of servirtium recorder",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "private": true,
+  "homepage": "https://servirtium.dev",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "private": false,
   "scripts": {
     "publish": "npm publish",
     "build": "tsc",
