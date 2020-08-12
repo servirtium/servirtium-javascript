@@ -1,11 +1,14 @@
 {
   "name": "@servirtium/recorder",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "This is the demo of servirtium recorder",
   "homepage": "https://servirtium.dev",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "publish": "npm publish",
     "build": "tsc",
@@ -13,6 +16,9 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "np": {
+    "yarn": false
   },
   "dependencies": {
     "cors": "^2.8.5",
