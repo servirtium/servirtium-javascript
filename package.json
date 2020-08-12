@@ -1,6 +1,6 @@
 {
   "name": "@servirtium/recorder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "This is the demo of servirtium recorder",
   "homepage": "https://servirtium.dev",
   "main": "dist/index.js",
@@ -10,6 +10,9 @@
     "publish": "npm publish",
     "build": "tsc",
     "test": "jest"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "cors": "^2.8.5",
