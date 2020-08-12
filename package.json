@@ -1,6 +1,6 @@
 {
   "name": "@servirtium/recorder",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "This is the demo of servirtium recorder",
   "homepage": "https://servirtium.dev",
   "main": "dist/index.js",
@@ -27,6 +27,7 @@
     "babel": "^6.23.0",
     "jasmine": "^3.6.1",
     "jest": "^25.3.0",
+    "np": "^6.4.0",
     "typescript": "^3.9.7"
   },
   "jest": {
