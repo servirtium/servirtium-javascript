@@ -1,6 +1,6 @@
 {
   "name": "@servirtium/recorder",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "This is the demo of servirtium recorder",
   "homepage": "https://servirtium.dev",
   "main": "dist/index.js",
