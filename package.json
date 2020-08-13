@@ -1,6 +1,6 @@
 {
   "name": "@servirtium/recorder",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "description": "This is the demo of servirtium recorder",
   "homepage": "https://servirtium.dev",
   "main": "dist/index.js",
@@ -10,8 +10,9 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "tsc",
-    "test": "jest"
+    "build": "tsc && cp ./src/template.ejs ./dist",
+    "test": "jest",
+    "prepare": "yarn build"
   },
   "publishConfig": {
     "access": "public"
