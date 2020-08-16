@@ -4,17 +4,20 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
-from subprocess import call
+from subprocess import Popen
 
 
 # launch node
 
+p = None
+
 if len(sys.argv) > 1:
    if sys.argv[1] == "record":
        url = "https://localhost:61417"
-       call(["node", "src/todobackend_compatibility_test.ts", "record"])
+       p = Popen(["node", "src/todobackend_compatibility_test.ts", "record"])
    elif sys.argv[1] == "playback":
        url = "https://localhost:61417"
+       p = Popen(["node", "src/todobackend_compatibility_test.ts", "playback"])
    elif sys.argv[1] == "direct":
        print("showing reference Sinatra app online without Servirtium in the middle")
        url = "https://todo-backend-sinatra.herokuapp.com"
@@ -32,12 +35,12 @@ try:
     element = WebDriverWait(driver, 20).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
     )
-    print("all passed")
+    print("Compatibility suite: all 16 tests passed")
     driver.quit()
 except TimeoutException as ex:
-    print("didnae finish with 16 passes")
-finally:
-    print("compatibility ends")
+    print("Compatibility suite: didnae finish with 16 passes. See open browser frame.")
 
+if p is not None:
+    p.kill()
 
 #driver.quit()
