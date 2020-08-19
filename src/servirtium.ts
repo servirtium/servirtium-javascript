@@ -110,7 +110,15 @@ export class Servirtium {
     this.requestPath = proxyReq.path
     this.requestHeaders = proxyReq.getHeaders()
     this.requestMethod = proxyReq.method
-    this.requestBody = request.body
+    let body = []
+    request.on('data', (chunk) => {
+      body.push(chunk);
+    })
+    request.on('end', async () => {
+      let content = Buffer.concat(body).toString()
+      const finalContent = this._replaceContent(content)
+      this.requestBody = finalContent
+    })
   }
 
   private _onProxyRes = async (proxyRes) => {

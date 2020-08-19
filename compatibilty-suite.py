@@ -34,7 +34,7 @@ driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 
 driver.get("https://www.todobackend.com/specs/index.html?" + url + "/todos")
 try:
-    element = WebDriverWait(driver, 100).until(
+    element = WebDriverWait(driver, 300).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
     )
     print("Compatibility suite: all 16 tests passed")
