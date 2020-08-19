@@ -211,6 +211,9 @@ export class Servirtium {
   }
 
   private _parseHeaders = (content: string): http.IncomingHttpHeaders => {
+    if (content.includes("```")) {
+      //console.log("headers>>>>" + content + "<<<<<<<")
+    }
     let headers = {}
     const headersContents = content.split('\n')
     headersContents?.forEach((item: string) => {
@@ -226,14 +229,20 @@ export class Servirtium {
   }
 
   private _getPlaybackResponse = (content: string): { body: string, headers: http.IncomingHttpHeaders } => {
-    const headerRegex = /`+\n+### Response headers recorded for playback:\n+`+/g
-    const contentSplited = content?.split(headerRegex)
-    const RESPONSE_INDEX = 1
-    const bodyRegex = /`+\n+### Response body recorded for playback \([a-zA-Z0-9\s:/)]+\n+`+/g
-    const responseSplited = contentSplited?.[RESPONSE_INDEX]?.split(bodyRegex)
-    const unuseCharRegex = /(`+|\n+)/g
-    const responseBody = responseSplited?.[1]?.replace(unuseCharRegex, '')
-    const headers = this._parseHeaders(responseSplited?.[0])
+
+    let sections = content.split("\n### ")
+    let headers;
+    let responseBody;
+
+    sections.forEach(section => {
+      if (section.startsWith("Response headers recorded for playback")) {
+        headers = this._parseHeaders(section.split("```")[1])
+      }
+      if (section.startsWith("Response body recorded for playback")) {
+        let body = section.split("```")[1];
+        responseBody = body.substring(1, body.length-1)
+      }
+      })
     return { body: responseBody, headers }
   }
 
@@ -246,7 +255,6 @@ export class Servirtium {
       Object.keys(headers)?.forEach((item: string) => {
         res.setHeader(item, headers[item])
       })
-      this.interactionSequence += 1
       res.writeHead(200)
       res.end(body)
     } catch (error) {
@@ -255,6 +263,8 @@ export class Servirtium {
       console.log("Internal Server Error: " + error)
       console.trace(error);
     }
+    this.interactionSequence += 1
+
   }
 
   public checkMarkdownIsDifferentToPreviousRecording = async (): Promise<boolean> => {
