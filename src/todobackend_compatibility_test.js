@@ -10,7 +10,7 @@ const run = async() => {
       case 'record':
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
-        servirtium.replaceRequestHeaders('host', 'localhost:61417')
+        servirtium.replaceRequestHeaders([{'host': 'localhost:61417'}, {"user-agent": "servirtium-compatibility-suite"}])
         servirtium.replaceResponseHeaders('host', 'localhost:61417')
         servirtium.replaceContentByRegex({'https:\/\/todo-backend-sinatra\.herokuapp\.com': 'http://localhost:61417'})
         await servirtium.startRecord()
