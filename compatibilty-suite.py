@@ -38,13 +38,9 @@ try:
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
     )
     print("Compatibility suite: all 16 tests passed")
-    if p is not None:
-        os.killpg(os.getpgid(p.pid), signal.SIGTERM)
-        p.kill()
-    driver.quit()
 except TimeoutException as ex:
     print("Compatibility suite: did not finish with 16 passes. See open browser frame.")
-    if p is not None:
-        os.killpg(os.getpgid(p.pid), signal.SIGTERM)
-        p.kill()
-    driver.quit()
+if p is not None:
+    os.killpg(os.getpgid(p.pid), signal.SIGTERM)
+    p.kill()
+driver.quit()
