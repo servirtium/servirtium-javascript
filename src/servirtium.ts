@@ -58,11 +58,11 @@ export class Servirtium {
     this.recordContent = ''
   }
 
-  public startPlayback = (callback?: (...args: any[]) => void) => {
+  public startPlayback = (callback?: (...args: any[]) => void, port: number = 61417) => {
     const app = express()
     app.use(cors({ origin: true }))
     app.use(this._playbackHandler)
-    this.serverPlayback = app.listen(61417, callback)
+    this.serverPlayback = app.listen(port, callback)
   }
 
   public deleteRequestHeaders = (headers: string[]) => {
@@ -150,7 +150,7 @@ export class Servirtium {
     res.end('Something went wrong. And we are reporting a custom error message.');
   }
 
-  public startRecord  = (callback?: (err?: Error) => void) => {
+  public startRecord  = (callback?: (err?: Error) => void, port: number = 61417) => {
     const app = express()
     app.use(cors({ origin: true }))
     const options = {
@@ -162,7 +162,7 @@ export class Servirtium {
     } as Options
 
     app.use('/', createProxyMiddleware(options))
-    this.serverRecord = app.listen(61417, callback)
+    this.serverRecord = app.listen(port, callback)
   }
 
   public endRecord = (callback?: (err?: Error) => void) => {
