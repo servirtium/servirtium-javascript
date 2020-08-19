@@ -1,4 +1,6 @@
 import sys
+import os
+import signal
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -13,11 +15,11 @@ p = None
 
 if len(sys.argv) > 1:
    if sys.argv[1] == "record":
-       url = "https://localhost:61417"
-       p = Popen(["node", "src/todobackend_compatibility_test.ts", "record"])
+       url = "http://localhost:61417"
+       p = Popen(["node", "src/todobackend_compatibility_test.js", "record"])
    elif sys.argv[1] == "playback":
-       url = "https://localhost:61417"
-       p = Popen(["node", "src/todobackend_compatibility_test.ts", "playback"])
+       url = "http://localhost:61417"
+       p = Popen(["node", "src/todobackend_compatibility_test.js", "playback"])
    elif sys.argv[1] == "direct":
        print("showing reference Sinatra app online without Servirtium in the middle")
        url = "https://todo-backend-sinatra.herokuapp.com"
@@ -32,15 +34,17 @@ driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 
 driver.get("https://www.todobackend.com/specs/index.html?" + url + "/todos")
 try:
-    element = WebDriverWait(driver, 20).until(
+    element = WebDriverWait(driver, 100).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
     )
     print("Compatibility suite: all 16 tests passed")
+    if p is not None:
+        os.killpg(os.getpgid(p.pid), signal.SIGTERM)
+        p.kill()
     driver.quit()
 except TimeoutException as ex:
-    print("Compatibility suite: didnae finish with 16 passes. See open browser frame.")
-
-if p is not None:
-    p.kill()
-
-#driver.quit()
+    print("Compatibility suite: did not finish with 16 passes. See open browser frame.")
+    if p is not None:
+        os.killpg(os.getpgid(p.pid), signal.SIGTERM)
+        p.kill()
+    driver.quit()

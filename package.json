@@ -1,6 +1,6 @@
 {
   "name": "@servirtium/recorder",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "This is the demo of servirtium recorder",
   "homepage": "https://servirtium.dev",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "tsc && cp ./src/template.ejs ./dist",
+    "build": "rimraf dist && tsc && cp ./src/template.ejs ./dist",
     "test": "jest",
     "prepare": "yarn build"
   },
@@ -34,6 +34,7 @@
     "jasmine": "^3.6.1",
     "jest": "^25.3.0",
     "np": "^6.4.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   },
   "jest": {

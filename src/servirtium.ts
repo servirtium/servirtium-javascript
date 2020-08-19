@@ -21,7 +21,7 @@ export interface IServirtium {
   checkMarkdownIsDifferentToPreviousRecording(): Promise<boolean>
 }
 
-class Servirtium {
+export class Servirtium {
   private apiUrl: string
   private serverPlayback: http.Server
   private serverRecord: http.Server
