@@ -240,9 +240,10 @@ export class Servirtium {
       }
       if (section.startsWith("Response body recorded for playback")) {
         let body = section.split("```")[1];
-        responseBody = body.substring(1, body.length-1)
+        responseBody = body.substring(1)
+        headers["content-length"] = responseBody.length
       }
-      })
+    })
     return { body: responseBody, headers }
   }
 
