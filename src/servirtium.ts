@@ -228,9 +228,9 @@ export class Servirtium {
     return headers
   }
 
-  private _getPlaybackResponse = (content: string): { body: string, headers: http.IncomingHttpHeaders } => {
+  private _getPlaybackResponse = (interaction: string): { body: string, headers: http.IncomingHttpHeaders } => {
 
-    let sections = content.split("\n### ")
+    let sections = interaction.split("\n### ")
     let headers;
     let responseBody;
 
@@ -251,8 +251,8 @@ export class Servirtium {
     try {
       const fileDir = path.resolve(process.cwd(), 'mocks', `${this.testName}.md`)
       const content = await fs.readFileSync(fileDir, { encoding: 'utf8' })
-      const scenario = this._getInteraction(content, this.interactionSequence)
-      const { body, headers } = this._getPlaybackResponse(scenario)
+      const interaction = this._getInteraction(content, this.interactionSequence)
+      const { body, headers } = this._getPlaybackResponse(interaction)
       Object.keys(headers)?.forEach((item: string) => {
         res.setHeader(item, headers[item])
       })
