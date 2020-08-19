@@ -127,16 +127,16 @@ describe('Servirtium', () => {
     })
   })
 
-  describe('_getScenario', () => {
+  describe('_getInteraction', () => {
     it('should run correctly', () => {
-      const mockContent = '## Interaction 123 ## Interaction 234'
-      const result = servirtium['_getScenario'](mockContent, 0)
-      expect(result).toEqual(' 123 ')
+      const mockContent = '## Interaction 123 \n## Interaction 234 '
+      const result = servirtium['_getInteraction'](mockContent, 0)
+      expect(result).toEqual('123 ')
     })
     it('should run correctly', () => {
-      const mockContent = '## Interaction 123 ## Interaction 234'
-      const result = servirtium['_getScenario'](mockContent, 1)
-      expect(result).toEqual(' 234')
+      const mockContent = '## Interaction 123 \n## Interaction 234 '
+      const result = servirtium['_getInteraction'](mockContent, 1)
+      expect(result).toEqual('234 ')
     })
   })
 

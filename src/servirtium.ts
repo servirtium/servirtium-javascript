@@ -63,6 +63,7 @@ export class Servirtium {
     app.use(cors({ origin: true }))
     app.use(this._playbackHandler)
     this.serverPlayback = app.listen(port, callback)
+    console.log("Servirtium playback starting on port " + port)
   }
 
   public deleteRequestHeaders = (headers: string[]) => {
@@ -163,6 +164,7 @@ export class Servirtium {
 
     app.use('/', createProxyMiddleware(options))
     this.serverRecord = app.listen(port, callback)
+    console.log("Servirtium recording starting on port " + port)
   }
 
   public endRecord = (callback?: (err?: Error) => void) => {
@@ -203,9 +205,9 @@ export class Servirtium {
     this.interactionSequence += 1
   }
 
-  private _getScenario = (content: string, scenarioSequence: number): string => {
-    const scenarios = content?.split("## Interaction")
-    return scenarios[scenarioSequence + 1]
+  private _getInteraction = (content: string, interactionSequence: number): string => {
+    const interactions = ("\n" + content).split("\n## Interaction ")
+    return interactions[interactionSequence + 1]
   }
 
   private _parseHeaders = (content: string): http.IncomingHttpHeaders => {
@@ -239,7 +241,7 @@ export class Servirtium {
     try {
       const fileDir = path.resolve(process.cwd(), 'mocks', `${this.testName}.md`)
       const content = await fs.readFileSync(fileDir, { encoding: 'utf8' })
-      const scenario = this._getScenario(content, this.interactionSequence)
+      const scenario = this._getInteraction(content, this.interactionSequence)
       const { body, headers } = this._getPlaybackResponse(scenario)
       Object.keys(headers)?.forEach((item: string) => {
         res.setHeader(item, headers[item])
@@ -249,7 +251,9 @@ export class Servirtium {
       res.end(body)
     } catch (error) {
       res.writeHead(500)
-      res.end('Internal Server Error')
+      res.end('')
+      console.log("Internal Server Error: " + error)
+      console.trace(error);
     }
   }
 
