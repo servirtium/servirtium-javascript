@@ -111,6 +111,7 @@ export class Servirtium {
     this.requestPath = proxyReq.path
     this.requestHeaders = proxyReq.getHeaders()
     this.requestMethod = proxyReq.method
+    console.log("method = " + this.requestMethod)
     let body = []
     request.on('data', (chunk) => {
       body.push(chunk);
