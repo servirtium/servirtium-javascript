@@ -1,0 +1,1 @@
+cat mocks/todobackend_test_suite.md | grep -Ewo '[[:xdigit:]]{8}(-[[:xdigit:]]{4}){3}-[[:xdigit:]]{12}' | sort | uniq | nl -n ln | awk ' { t = $1; $1 = $2; $2 = t; print; } ' | sed 's# #/REPLACED_UUID_FOR_COMPATABILITY_TEST_#' | sed -e 's#$#/g" |#' | sed -e 's#^#sed "s/#' >> compatibility_suite_mock_replacements.sh
