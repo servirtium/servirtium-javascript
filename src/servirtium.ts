@@ -101,7 +101,7 @@ export class Servirtium {
     return finalContent
   }
 
-  private _onProxyReq = (proxyReq, request) => {
+  private _onProxyReq = (proxyReq: http.ClientRequest, request: express.Request, response: express.Response) => {
     this.requestHeadersDelete?.forEach((item) => {
       proxyReq.removeHeader(item)
     })
@@ -123,7 +123,7 @@ export class Servirtium {
     })
   }
 
-  private _onProxyRes = async (proxyRes) => {
+  private _onProxyRes = async (proxyRes: http.IncomingMessage, request: express.Request, response: express.Response) => {
     this.responseHeadersDelete.forEach((item) => {
       delete proxyRes.headers[item]
     })
@@ -145,7 +145,7 @@ export class Servirtium {
     })
   }
 
-  private _onError =( err, req, res) => {
+  private _onError =(err: Error, req: express.Request, res: express.Response) => {
     res.writeHead(500, {
       'Content-Type': 'text/plain',
     });
