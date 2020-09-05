@@ -6,6 +6,8 @@ import http from 'http'
 import ejs from 'ejs'
 import { createProxyMiddleware, Options } from 'http-proxy-middleware'
 
+export type RegexReplacement = {[regex: string]: string}
+
 export interface IServirtium {
   startPlayback(callback?: (...args: any[]) => void)
   endPlayback(callback?: (err?: Error) => void)
@@ -13,11 +15,14 @@ export interface IServirtium {
   startRecord(callback?: (err?: Error) => void)
   endRecord(callback?: (err?: Error) => void)
   writeRecord()
-  deleteRequestHeaders(headers: string[])
+  addCallerRequestHeadersRemoval(headers: string[])
+  addCallerRequestHeadersReplacement(headers: http.OutgoingHttpHeaders)
+  addCallerRecordHeadersRemoval(headers: string[])
+  addCallerRecordHeadersReplacement(headers: http.OutgoingHttpHeaders)
+
   deleteResponseHeaders(headers: string[])
-  replaceRequestHeaders(headers: http.OutgoingHttpHeaders)
   replaceResponseHeaders(headers: http.IncomingHttpHeaders)
-  replaceContentByRegex(values: { [key: string]: string })
+  replaceContentByRegex(values: RegexReplacement)
   checkMarkdownIsDifferentToPreviousRecording(): Promise<boolean>
 }
 
@@ -36,20 +41,87 @@ export class Servirtium {
   private responseBody: string
   private responseStatus: number
   private recordContent: string
-  private requestHeadersDelete: string[]
-  private responseHeadersDelete: string[]
-  private requestHeadersReplace: http.OutgoingHttpHeaders
-  private responseHeadersReplace: http.IncomingHttpHeaders
-  private regexToReplaceContent: {[regex: string]: string}
+  // caller request
+  private callerRequestHeadersRemoval: string[]
+  private callerRequestHeadersReplacement: http.OutgoingHttpHeaders
+  private callerRequestBodyReplacement: RegexReplacement
+
+  // record request
+  private recordRequestHeadersRemoval: string[]
+  private recordRequestHeadersReplacement: http.OutgoingHttpHeaders
+  private recordRequestBodyReplacement: RegexReplacement
+
+  // caller response
+  private callerResponseHeadersRemoval: string[]
+  private callerResponseHeadersReplacement: http.IncomingHttpHeaders
+  private callerResponseBodyReplacement: {[regex: string]: string}
+
+  // record response
+  private recordResponseHeadersRemoval: string[]
+  private recordResponseHeadersReplacement: http.IncomingHttpHeaders
+  private recordResponseBodyReplacement: {[regex: string]: string}
 
   constructor(apiUrl?: string) {
     this.apiUrl = apiUrl
-    this.requestHeadersDelete = []
-    this.responseHeadersDelete = []
-    this.requestHeadersReplace = {}
-    this.responseHeadersReplace = {}
+    this.callerRequestHeadersRemoval = []
+    this.recordResponseHeadersRemoval = []
+    this.callerRequestHeadersReplacement = {}
+    this.recordResponseHeadersReplacement = {}
     this.interactionSequence = 0
     this.recordContent = ''
+  }
+
+
+  // Methods for caller request replacement
+  public addCallerRequestHeadersRemoval = (headers: string[]) => {
+    this.callerRequestHeadersRemoval = headers
+  }
+
+  public addCallerRequestHeadersReplacement = (headers: http.OutgoingHttpHeaders) => {
+    this.callerRequestHeadersReplacement = headers
+  }
+
+  public addCallerRequestBodyReplacement = (values: RegexReplacement) => {
+    this.callerRequestBodyReplacement = values
+  }
+
+  // Methods for record request replacement
+  public addRecordRequestHeadersRemoval = (headers: string[]) => {
+    this.recordRequestHeadersRemoval = headers
+  }
+
+  public addRecordRequestHeadersReplacement = (headers: http.OutgoingHttpHeaders) => {
+    this.recordRequestHeadersReplacement = headers
+  }
+
+  public addRecordRequestBodyReplacement = (values: RegexReplacement) => {
+    this.recordRequestBodyReplacement = values
+  }
+
+  // Methods for caller response replacement
+  public addCallerResponseReplacement = (headers: string[]) => {
+    this.callerResponseHeadersRemoval = headers
+  }
+
+  public addCallerResponseHeadersReplacement = (headers: http.IncomingHttpHeaders) => {
+    this.callerResponseHeadersReplacement = headers
+  }
+
+  public addCallerResponseBodyReplacement = (values: RegexReplacement) => {
+    this.callerResponseBodyReplacement = values
+  }
+
+  // Methods for record response replacement
+  public addRecordResponseReplacement = (headers: string[]) => {
+    this.recordResponseHeadersRemoval = headers
+  }
+
+  public addRecordResponseHeadersReplacement = (headers: http.IncomingHttpHeaders) => {
+    this.recordResponseHeadersReplacement = headers
+  }
+
+  public addRecordResponseBodyReplacement = (values: RegexReplacement) => {
+    this.recordResponseBodyReplacement = values
   }
 
   public setTestName = (testName: string) => {
@@ -66,69 +138,43 @@ export class Servirtium {
     console.log("Servirtium playback starting on port " + port)
   }
 
-  public deleteRequestHeaders = (headers: string[]) => {
-    this.requestHeadersDelete = headers
-  }
-
-  public deleteResponseHeaders = (headers: string[]) => {
-    this.responseHeadersDelete = headers
-  }
-
-  public replaceRequestHeaders = (headers: http.OutgoingHttpHeaders) => {
-    this.requestHeadersReplace = headers
-  }
-
-  public replaceResponseHeaders = (headers: http.IncomingHttpHeaders) => {
-    this.responseHeadersReplace = headers
-  }
-
   public endPlayback = (callback?: (err?: Error) => void) => {
     this.serverPlayback.close(callback)
   }
 
-  public replaceContentByRegex = (values: { [key: string]: string }) => {
-    this.regexToReplaceContent = values
-  }
-
   private _replaceContent = (content: string): string => {
     let finalContent = content
-    if (this.regexToReplaceContent) {
-      Object.keys(this.regexToReplaceContent).forEach(item => {
+    if (this.recordResponseBodyReplacement) {
+      Object.keys(this.recordResponseBodyReplacement).forEach(item => {
         const regex = new RegExp(item)
-        finalContent = finalContent.replace(regex, this.regexToReplaceContent[item])
+        finalContent = finalContent.replace(regex, this.recordResponseBodyReplacement[item])
       })
     }
     return finalContent
   }
 
-  private _onProxyReq = (proxyReq: http.ClientRequest, request: express.Request, response: express.Response) => {
-    this.requestHeadersDelete?.forEach((item) => {
+  private _onProxyReq = async (proxyReq: http.ClientRequest, request: express.Request, response: express.Response) => {
+    this.callerRequestHeadersRemoval?.forEach((item) => {
       proxyReq.removeHeader(item)
     })
-    Object.keys(this.requestHeadersReplace).forEach((item) => {
-      proxyReq.setHeader(item, this.requestHeadersReplace[item])
+    Object.keys(this.callerRequestHeadersReplacement).forEach((item) => {
+      proxyReq.setHeader(item, this.callerRequestHeadersReplacement[item])
     })
     this.requestPath = proxyReq.path
     this.requestHeaders = proxyReq.getHeaders()
     this.requestMethod = proxyReq.method
-    console.log("method = " + this.requestMethod)
-    let body = []
-    request.on('data', (chunk) => {
-      body.push(chunk);
-    })
-    request.on('end', async () => {
-      let content = Buffer.concat(body).toString()
-      const finalContent = this._replaceContent(content)
-      this.requestBody = finalContent
-    })
+    if (request.body) {
+      this.requestBody = request.body
+      proxyReq.write(request.body)
+    }
   }
 
   private _onProxyRes = async (proxyRes: http.IncomingMessage, request: express.Request, response: express.Response) => {
-    this.responseHeadersDelete.forEach((item) => {
+    this.recordResponseHeadersRemoval.forEach((item) => {
       delete proxyRes.headers[item]
     })
-    Object.keys(this.responseHeadersReplace).forEach((item) => {
-      proxyRes.headers[item] = this.responseHeadersReplace[item]
+    Object.keys(this.recordResponseHeadersReplacement).forEach((item) => {
+      proxyRes.headers[item] = this.recordResponseHeadersReplacement[item]
     })
     this.responseHeaders = proxyRes.headers
     this.responseStatus = proxyRes.statusCode
@@ -155,6 +201,17 @@ export class Servirtium {
   public startRecord  = (callback?: (err?: Error) => void, port: number = 61417) => {
     const app = express()
     app.use(cors({ origin: true }))
+    app.use((req, res, next) => {
+      let body = []
+      req.on('data', (chunk) => {
+        body.push(chunk);
+      })
+      req.on('end', async () => {
+        let content = Buffer.concat(body).toString()
+        req.body = content
+        next()
+      })
+    })
     const options = {
       target: this.apiUrl,
       changeOrigin: true,
