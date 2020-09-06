@@ -10,6 +10,10 @@ const run = async() => {
       case 'record':
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
+        servirtium.addCallerResponseBodyReplacement({
+          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
+          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+        })
         await servirtium.startRecord()
         process.on('SIGTERM', async (code) => {
           await servirtium.writeRecord()
@@ -19,6 +23,10 @@ const run = async() => {
       case 'playback':
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
+        servirtium.addCallerResponseBodyReplacement({
+          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
+          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+        })
         await servirtium.startPlayback()
         process.on('SIGTERM', async (code) => {
           await servirtium.endPlayback()
