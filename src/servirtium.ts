@@ -228,8 +228,7 @@ export class Servirtium {
       Object.keys(this.callerResponseHeadersReplacement).forEach((item) => {
         proxyRes.headers[item] = this.callerResponseHeadersReplacement[item]
       })
-      let callerResponseBody = body.toString();
-      callerResponseBody = this._replaceContent(callerResponseBody, this.callerResponseBodyReplacement)
+      const callerResponseBody = this._replaceContent(finalContent, this.callerResponseBodyReplacement)
       const callerResponseBodyBuff = Buffer.from(callerResponseBody)
       response.end(callerResponseBodyBuff)
     })
@@ -343,8 +342,7 @@ export class Servirtium {
       }
       if (section.startsWith("Response body recorded for playback")) {
         let body = section.split("```")[1];
-        responseBody = body.substring(1)
-        headers["content-length"] = responseBody.length
+        responseBody = body.substring(1).trim()
       }
     })
     return { body: responseBody, headers }
