@@ -17,12 +17,16 @@ export interface IServirtium {
   writeRecord()
   addCallerRequestHeadersRemoval(headers: string[])
   addCallerRequestHeadersReplacement(headers: http.OutgoingHttpHeaders)
-  addCallerRecordHeadersRemoval(headers: string[])
-  addCallerRecordHeadersReplacement(headers: http.OutgoingHttpHeaders)
-
-  deleteResponseHeaders(headers: string[])
-  replaceResponseHeaders(headers: http.IncomingHttpHeaders)
-  replaceContentByRegex(values: RegexReplacement)
+  addCallerRequestBodyReplacement(values: RegexReplacement)
+  addRecordRequestHeadersRemoval(headers: string[])
+  addRecordRequestHeadersReplacement(headers: http.OutgoingHttpHeaders)
+  addRecordRequestBodyReplacement(values: RegexReplacement)
+  addCallerResponseReplacement(headers: string[])
+  addCallerResponseHeadersReplacement(headers: http.IncomingHttpHeaders)
+  addCallerResponseBodyReplacement(values: RegexReplacement)
+  addRecordResponseReplacement(headers: string[])
+  addRecordResponseHeadersReplacement(headers: http.IncomingHttpHeaders)
+  addRecordResponseBodyReplacement(values: RegexReplacement)
   checkMarkdownIsDifferentToPreviousRecording(): Promise<boolean>
 }
 
@@ -32,14 +36,14 @@ export class Servirtium {
   private serverRecord: http.Server
   private testName: string
   private interactionSequence: number
-  private requestHeaders: http.OutgoingHttpHeaders
-  private requestPath: string
-  private requestMethod: string
-  private requestBody: string
-  private responseHeaders: http.IncomingHttpHeaders
-  private responseContentType: string
-  private responseBody: string
-  private responseStatus: number
+  private recordRequestPath: string
+  private recordRequestMethod: string
+  private recordRequestHeaders: http.OutgoingHttpHeaders
+  private recordRequestBody: string
+  private recordResponseHeaders: http.IncomingHttpHeaders
+  private recordResponseContentType: string
+  private recordResponseBody: string
+  private recordResponseStatus: number
   private recordContent: string
   // caller request
   private callerRequestHeadersRemoval: string[]
@@ -54,19 +58,31 @@ export class Servirtium {
   // caller response
   private callerResponseHeadersRemoval: string[]
   private callerResponseHeadersReplacement: http.IncomingHttpHeaders
-  private callerResponseBodyReplacement: {[regex: string]: string}
+  private callerResponseBodyReplacement: RegexReplacement
 
   // record response
   private recordResponseHeadersRemoval: string[]
   private recordResponseHeadersReplacement: http.IncomingHttpHeaders
-  private recordResponseBodyReplacement: {[regex: string]: string}
+  private recordResponseBodyReplacement: RegexReplacement
 
   constructor(apiUrl?: string) {
     this.apiUrl = apiUrl
     this.callerRequestHeadersRemoval = []
-    this.recordResponseHeadersRemoval = []
     this.callerRequestHeadersReplacement = {}
+    this.callerRequestBodyReplacement = {}
+
+    this.recordRequestHeadersRemoval = []
+    this.recordRequestHeadersReplacement = {}
+    this.recordRequestBodyReplacement = {}
+
+    this.callerResponseHeadersRemoval = []
+    this.callerResponseHeadersReplacement = {}
+    this.callerResponseBodyReplacement = {}
+
+    this.recordResponseHeadersRemoval = []
     this.recordResponseHeadersReplacement = {}
+    this.recordResponseBodyReplacement = {}
+
     this.interactionSequence = 0
     this.recordContent = ''
   }
@@ -142,52 +158,80 @@ export class Servirtium {
     this.serverPlayback.close(callback)
   }
 
-  private _replaceContent = (content: string): string => {
+  private _replaceContent = (content: string, regexReplacement: RegexReplacement): string => {
     let finalContent = content
-    if (this.recordResponseBodyReplacement) {
-      Object.keys(this.recordResponseBodyReplacement).forEach(item => {
-        const regex = new RegExp(item)
-        finalContent = finalContent.replace(regex, this.recordResponseBodyReplacement[item])
-      })
-    }
+    Object.keys(regexReplacement).forEach(item => {
+      const regex = new RegExp(item)
+      finalContent = finalContent.replace(regex, regexReplacement[item])
+    })
     return finalContent
   }
 
   private _onProxyReq = async (proxyReq: http.ClientRequest, request: express.Request, response: express.Response) => {
+    // Mutate caller request headers
     this.callerRequestHeadersRemoval?.forEach((item) => {
       proxyReq.removeHeader(item)
     })
     Object.keys(this.callerRequestHeadersReplacement).forEach((item) => {
       proxyReq.setHeader(item, this.callerRequestHeadersReplacement[item])
     })
-    this.requestPath = proxyReq.path
-    this.requestHeaders = proxyReq.getHeaders()
-    this.requestMethod = proxyReq.method
+
+    // Mutate record request headers
+    let callerRequestHeaders = proxyReq.getHeaders()
+    this.recordRequestHeadersRemoval?.forEach(item => {
+      delete callerRequestHeaders[item]
+    })
+    Object.keys(this.recordRequestHeadersReplacement).forEach((item) => {
+      callerRequestHeaders[item] = this.recordRequestHeadersReplacement[item]
+    })
+    // Assign record data
+    this.recordRequestPath = proxyReq.path
+    this.recordRequestMethod = proxyReq.method
+    this.recordRequestHeaders = callerRequestHeaders
+
     if (request.body) {
-      this.requestBody = request.body
-      proxyReq.write(request.body)
+      const callerBody = this._replaceContent(request.body, this.callerRequestBodyReplacement)
+      // Assign record body
+      const recordBody = this._replaceContent(callerBody, this.recordRequestBodyReplacement)
+      this.recordRequestBody = recordBody
+      // Forward request
+      proxyReq.write(callerBody)
     }
   }
 
   private _onProxyRes = async (proxyRes: http.IncomingMessage, request: express.Request, response: express.Response) => {
+    // mutate real response for record
     this.recordResponseHeadersRemoval.forEach((item) => {
       delete proxyRes.headers[item]
     })
     Object.keys(this.recordResponseHeadersReplacement).forEach((item) => {
       proxyRes.headers[item] = this.recordResponseHeadersReplacement[item]
     })
-    this.responseHeaders = proxyRes.headers
-    this.responseStatus = proxyRes.statusCode
-    this.responseContentType = proxyRes?.headers?.['content-type']
+    this.recordResponseHeaders = proxyRes.headers
+    this.recordResponseStatus = proxyRes.statusCode
+    this.recordResponseContentType = proxyRes?.headers?.['content-type']
+
     let body = []
     proxyRes.on('data', (chunk) => {
       body.push(chunk);
     })
     proxyRes.on('end', async () => {
       let content = Buffer.concat(body).toString()
-      const finalContent = this._replaceContent(content)
-      this.responseBody = finalContent
+      const finalContent = this._replaceContent(content, this.recordResponseBodyReplacement)
+      this.recordResponseBody = finalContent
       await this._generateTemplate()
+      response.status(proxyRes.statusCode)
+      // Mutate response for caller
+      this.callerResponseHeadersRemoval.forEach((item) => {
+        delete proxyRes.headers[item]
+      })
+      Object.keys(this.callerResponseHeadersReplacement).forEach((item) => {
+        proxyRes.headers[item] = this.callerResponseHeadersReplacement[item]
+      })
+      let callerResponseBody = body.toString();
+      callerResponseBody = this._replaceContent(callerResponseBody, this.callerResponseBodyReplacement)
+      const callerResponseBodyBuff = Buffer.from(callerResponseBody)
+      response.end(callerResponseBodyBuff)
     })
   }
 
@@ -215,6 +259,7 @@ export class Servirtium {
     const options = {
       target: this.apiUrl,
       changeOrigin: true,
+      selfHandleResponse : true,
       onProxyReq: this._onProxyReq,
       onProxyRes: this._onProxyRes,
       onError: this._onError,
@@ -246,14 +291,14 @@ export class Servirtium {
     })
     const tmpl = template({
       interactionSequence: this.interactionSequence,
-      requestPath: this.requestPath,
-      requestMethod: this.requestMethod,
-      responseStatus: this.responseStatus,
-      responseContentType: this.responseContentType,
-      requestHeaders: this.requestHeaders,
-      requestBody: this.requestBody,
-      responseHeaders: this.responseHeaders,
-      responseBody: this.responseBody
+      requestPath: this.recordRequestPath,
+      requestMethod: this.recordRequestMethod,
+      responseStatus: this.recordResponseStatus,
+      responseContentType: this.recordResponseContentType,
+      requestHeaders: this.recordRequestHeaders,
+      requestBody: this.recordRequestBody,
+      responseHeaders: this.recordResponseHeaders,
+      responseBody: this.recordResponseBody
     })
     if(this.interactionSequence === 0) {
       this.recordContent=`${tmpl}`
@@ -311,11 +356,22 @@ export class Servirtium {
       const content = await fs.readFileSync(fileDir, { encoding: 'utf8' })
       const interaction = this._getInteraction(content, this.interactionSequence)
       const { body, headers } = this._getPlaybackResponse(interaction)
+      // mutate response headers
+      this.callerResponseHeadersRemoval.forEach((item) => {
+        delete headers[item]
+      })
+      Object.keys(this.callerResponseHeadersReplacement).forEach((item) => {
+        headers[item] = this.callerResponseHeadersReplacement[item]
+      })
+      // Forward headers response
       Object.keys(headers)?.forEach((item: string) => {
         res.setHeader(item, headers[item])
       })
       res.writeHead(200)
-      res.end(body)
+      // Mutate body response
+      const newBody = this._replaceContent(body, this.callerResponseBodyReplacement)
+      // Forward body response
+      res.end(newBody)
     } catch (error) {
       res.writeHead(500)
       res.end('')
@@ -330,7 +386,7 @@ export class Servirtium {
     try {
       const fileDir = path.resolve(process.cwd(), 'mocks', `${this.testName}.md`)
       const markdownContent = await fs.readFileSync(fileDir, { encoding: 'utf8' })
-      const newContent = this._replaceContent(this.recordContent)
+      const newContent = this._replaceContent(this.recordContent, this.recordResponseBodyReplacement)
       return newContent === markdownContent
     } catch(err) {
       return true

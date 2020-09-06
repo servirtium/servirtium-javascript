@@ -32,31 +32,10 @@ describe('Servirtium', () => {
     })
   })
 
-  describe('deleteRequestHeaders',  () => {
-    it('should set deleteRequestHeaders', async () => {
-      await servirtium.deleteRequestHeaders(['mock'])
-      expect(servirtium['requestHeadersDelete']).toEqual(['mock'])
-    })
-  })
-
-  describe('deleteResponseHeaders',  () => {
-    it('should set deleteResponseHeaders', async () => {
-      await servirtium.deleteResponseHeaders(['mock'])
-      expect(servirtium['responseHeadersDelete']).toEqual(['mock'])
-    })
-  })
-
-  describe('replaceRequestHeaders',  () => {
-    it('should set replaceRequestHeaders', async () => {
-      await servirtium.replaceRequestHeaders({'set-cookie': '123'})
-      expect(servirtium['requestHeadersReplace']).toEqual({'set-cookie': '123'})
-    })
-  })
-
-  describe('replaceResponseHeaders',  () => {
-    it('should set replaceResponseHeaders', async () => {
-      await servirtium.replaceResponseHeaders({'set-cookie': ['123']})
-      expect(servirtium['responseHeadersReplace']).toEqual({'set-cookie': ['123']})
+  describe('addCallerRequestHeadersRemoval',  () => {
+    it('should set addCallerRequestHeadersRemoval', async () => {
+      await servirtium.addCallerRequestHeadersRemoval(['mock'])
+      expect(servirtium['callerRequestHeadersRemoval']).toEqual(['mock'])
     })
   })
 
@@ -67,22 +46,6 @@ describe('Servirtium', () => {
       servirtium.endPlayback()
       expect(spy).toBeCalled()
       done()
-    })
-  })
-
-  describe('replaceContentByRegex',  () => {
-    it('should set replaceContentByRegex', async () => {
-      servirtium.replaceContentByRegex({'123': '123'})
-      expect(servirtium['regexToReplaceContent']).toEqual({'123': '123'})
-    })
-  })
-
-  describe('_replaceContent', () => {
-    it('should run correctly', () => {
-      const content = 'password'
-      servirtium.replaceContentByRegex({'password': 'MASKED'})
-      const result = servirtium['_replaceContent'](content)
-      expect(result).toEqual('MASKED')
     })
   })
 
@@ -100,29 +63,6 @@ describe('Servirtium', () => {
       const spy = jest.spyOn(servirtium['serverRecord'], 'close')
       servirtium.endRecord()
       expect(spy).toBeCalled()
-      done()
-    })
-  })
-
-  describe('_generateTemplate', () => {
-    it('should run correctly', async (done) => {
-      servirtium['recordContent'] = 'mock'
-      servirtium['requestHeaders'] = {'set-cookie': ['123']}
-      servirtium['responseHeaders'] = {'set-cookie': ['123']}
-      await servirtium['_generateTemplate']()
-      expect(servirtium['interactionSequence']).toEqual(1)
-      expect(servirtium['recordContent']).toBeDefined()
-      done()
-    })
-
-    it('should run correctly', async (done) => {
-      servirtium['recordContent'] = 'mock'
-      servirtium['requestHeaders'] = {'set-cookie': ['123']}
-      servirtium['responseHeaders'] = {'set-cookie': ['123']}
-      servirtium['interactionSequence'] = 1
-      await servirtium['_generateTemplate']()
-      expect(servirtium['interactionSequence']).toEqual(2)
-      expect(servirtium['recordContent']).toBeDefined()
       done()
     })
   })
