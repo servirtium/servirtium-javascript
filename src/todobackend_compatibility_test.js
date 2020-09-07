@@ -10,7 +10,7 @@ const run = async() => {
       case 'record':
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
-        servirtium.addCallerRequestHeadersReplacement({
+        servirtium.addCallerRequestHeaderReplacements({
           "http://localhost:61417": "https://todo-backend-sinatra.herokuapp.com",
           "localhost:61417": "todo-backend-sinatra.herokuapp.com"
         })

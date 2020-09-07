@@ -16,16 +16,16 @@ export interface IServirtium {
   endRecord(callback?: (err?: Error) => void)
   writeRecord()
   addCallerRequestHeadersRemoval(headers: string[])
-  addCallerRequestHeadersReplacement(headers: http.OutgoingHttpHeaders)
+  addCallerRequestHeaderReplacements(headers: http.OutgoingHttpHeaders)
   addCallerRequestBodyReplacement(values: RegexReplacement)
   addRecordRequestHeadersRemoval(headers: string[])
-  addRecordRequestHeadersReplacement(headers: http.OutgoingHttpHeaders)
+  addRecordRequestHeaderReplacements(headers: http.OutgoingHttpHeaders)
   addRecordRequestBodyReplacement(values: RegexReplacement)
   addCallerResponseReplacement(headers: string[])
-  addCallerResponseHeadersReplacement(headers: http.IncomingHttpHeaders)
+  addCallerResponseHeaderReplacements(headers: http.IncomingHttpHeaders)
   addCallerResponseBodyReplacement(values: RegexReplacement)
   addRecordResponseReplacement(headers: string[])
-  addRecordResponseHeadersReplacement(headers: http.IncomingHttpHeaders)
+  addRecordResponseHeaderReplacements(headers: http.IncomingHttpHeaders)
   addRecordResponseBodyReplacement(values: RegexReplacement)
   checkMarkdownIsDifferentToPreviousRecording(): Promise<boolean>
 }
@@ -47,40 +47,40 @@ export class Servirtium {
   private recordContent: string
   // caller request
   private callerRequestHeadersRemoval: string[]
-  private callerRequestHeadersReplacement: http.OutgoingHttpHeaders
+  private callerRequestHeaderReplacements: http.OutgoingHttpHeaders
   private callerRequestBodyReplacement: RegexReplacement
 
   // record request
   private recordRequestHeadersRemoval: string[]
-  private recordRequestHeadersReplacement: http.OutgoingHttpHeaders
+  private recordRequestHeaderReplacements: http.OutgoingHttpHeaders
   private recordRequestBodyReplacement: RegexReplacement
 
   // caller response
   private callerResponseHeadersRemoval: string[]
-  private callerResponseHeadersReplacement: http.IncomingHttpHeaders
+  private callerResponseHeaderReplacements: http.IncomingHttpHeaders
   private callerResponseBodyReplacement: RegexReplacement
 
   // record response
   private recordResponseHeadersRemoval: string[]
-  private recordResponseHeadersReplacement: http.IncomingHttpHeaders
+  private recordResponseHeaderReplacements: http.IncomingHttpHeaders
   private recordResponseBodyReplacement: RegexReplacement
 
   constructor(apiUrl?: string) {
     this.apiUrl = apiUrl
     this.callerRequestHeadersRemoval = []
-    this.callerRequestHeadersReplacement = {}
+    this.callerRequestHeaderReplacements = {}
     this.callerRequestBodyReplacement = {}
 
     this.recordRequestHeadersRemoval = []
-    this.recordRequestHeadersReplacement = {}
+    this.recordRequestHeaderReplacements = {}
     this.recordRequestBodyReplacement = {}
 
     this.callerResponseHeadersRemoval = []
-    this.callerResponseHeadersReplacement = {}
+    this.callerResponseHeaderReplacements = {}
     this.callerResponseBodyReplacement = {}
 
     this.recordResponseHeadersRemoval = []
-    this.recordResponseHeadersReplacement = {}
+    this.recordResponseHeaderReplacements = {}
     this.recordResponseBodyReplacement = {}
 
     this.interactionSequence = 0
@@ -93,8 +93,8 @@ export class Servirtium {
     this.callerRequestHeadersRemoval = headers
   }
 
-  public addCallerRequestHeadersReplacement = (headers: http.OutgoingHttpHeaders) => {
-    this.callerRequestHeadersReplacement = headers
+  public addCallerRequestHeaderReplacements = (headers: http.OutgoingHttpHeaders) => {
+    this.callerRequestHeaderReplacements = headers
   }
 
   public addCallerRequestBodyReplacement = (values: RegexReplacement) => {
@@ -106,8 +106,8 @@ export class Servirtium {
     this.recordRequestHeadersRemoval = headers
   }
 
-  public addRecordRequestHeadersReplacement = (headers: http.OutgoingHttpHeaders) => {
-    this.recordRequestHeadersReplacement = headers
+  public addRecordRequestHeaderReplacements = (headers: http.OutgoingHttpHeaders) => {
+    this.recordRequestHeaderReplacements = headers
   }
 
   public addRecordRequestBodyReplacement = (values: RegexReplacement) => {
@@ -119,8 +119,8 @@ export class Servirtium {
     this.callerResponseHeadersRemoval = headers
   }
 
-  public addCallerResponseHeadersReplacement = (headers: http.IncomingHttpHeaders) => {
-    this.callerResponseHeadersReplacement = headers
+  public addCallerResponseHeaderReplacements = (headers: http.IncomingHttpHeaders) => {
+    this.callerResponseHeaderReplacements = headers
   }
 
   public addCallerResponseBodyReplacement = (values: RegexReplacement) => {
@@ -132,8 +132,8 @@ export class Servirtium {
     this.recordResponseHeadersRemoval = headers
   }
 
-  public addRecordResponseHeadersReplacement = (headers: http.IncomingHttpHeaders) => {
-    this.recordResponseHeadersReplacement = headers
+  public addRecordResponseHeaderReplacements = (headers: http.IncomingHttpHeaders) => {
+    this.recordResponseHeaderReplacements = headers
   }
 
   public addRecordResponseBodyReplacement = (values: RegexReplacement) => {
@@ -172,8 +172,8 @@ export class Servirtium {
     this.callerRequestHeadersRemoval?.forEach((item) => {
       proxyReq.removeHeader(item)
     })
-    Object.keys(this.callerRequestHeadersReplacement).forEach((item) => {
-      proxyReq.setHeader(item, this.callerRequestHeadersReplacement[item])
+    Object.keys(this.callerRequestHeaderReplacements).forEach((item) => {
+      proxyReq.setHeader(item, this.callerRequestHeaderReplacements[item])
     })
 
     // Mutate record request headers
@@ -181,8 +181,8 @@ export class Servirtium {
     this.recordRequestHeadersRemoval?.forEach(item => {
       delete callerRequestHeaders[item]
     })
-    Object.keys(this.recordRequestHeadersReplacement).forEach((item) => {
-      callerRequestHeaders[item] = this.recordRequestHeadersReplacement[item]
+    Object.keys(this.recordRequestHeaderReplacements).forEach((item) => {
+      callerRequestHeaders[item] = this.recordRequestHeaderReplacements[item]
     })
     // Assign record data
     this.recordRequestPath = proxyReq.path
@@ -204,8 +204,8 @@ export class Servirtium {
     this.recordResponseHeadersRemoval.forEach((item) => {
       delete proxyRes.headers[item]
     })
-    Object.keys(this.recordResponseHeadersReplacement).forEach((item) => {
-      proxyRes.headers[item] = this.recordResponseHeadersReplacement[item]
+    Object.keys(this.recordResponseHeaderReplacements).forEach((item) => {
+      proxyRes.headers[item] = this.recordResponseHeaderReplacements[item]
     })
     this.recordResponseHeaders = proxyRes.headers
     this.recordResponseStatus = proxyRes.statusCode
@@ -225,8 +225,8 @@ export class Servirtium {
       this.callerResponseHeadersRemoval.forEach((item) => {
         delete proxyRes.headers[item]
       })
-      Object.keys(this.callerResponseHeadersReplacement).forEach((item) => {
-        proxyRes.headers[item] = this.callerResponseHeadersReplacement[item]
+      Object.keys(this.callerResponseHeaderReplacements).forEach((item) => {
+        proxyRes.headers[item] = this.callerResponseHeaderReplacements[item]
       })
       const callerResponseBody = this._replaceContent(finalContent, this.callerResponseBodyReplacement)
       const callerResponseBodyBuff = Buffer.from(callerResponseBody)
@@ -358,8 +358,8 @@ export class Servirtium {
       this.callerResponseHeadersRemoval.forEach((item) => {
         delete headers[item]
       })
-      Object.keys(this.callerResponseHeadersReplacement).forEach((item) => {
-        headers[item] = this.callerResponseHeadersReplacement[item]
+      Object.keys(this.callerResponseHeaderReplacements).forEach((item) => {
+        headers[item] = this.callerResponseHeaderReplacements[item]
       })
       // Forward headers response
       Object.keys(headers)?.forEach((item: string) => {
