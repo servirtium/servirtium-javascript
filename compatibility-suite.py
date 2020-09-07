@@ -31,7 +31,7 @@ else:
 
 driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 
-time.sleep(5)
+# time.sleep(5)
 
 driver.get("https://www.todobackend.com/specs/index.html?" + url + "/todos")
 try:

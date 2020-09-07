@@ -18,7 +18,8 @@ const run = async() => {
           "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
           "todo-backend-sinatra.herokuapp.com": "localhost:61417"
         })
-        //servirtium.addCallerRequestHeadersRemoval(["via", "server"])
+        //TODO: addRecordResponseHeadersRemoval doesn't exist
+        //servirtium.addRecordResponseHeadersRemoval(["via", "server"])
         await servirtium.startRecord()
         process.on('SIGTERM', async (code) => {
           await servirtium.writeRecord()
