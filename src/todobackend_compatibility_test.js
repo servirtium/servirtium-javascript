@@ -11,12 +11,12 @@ const run = async() => {
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
         servirtium.addCallerRequestHeaderReplacements({
-          "http://localhost:61417": "https://todo-backend-sinatra.herokuapp.com",
-          "localhost:61417": "todo-backend-sinatra.herokuapp.com"
+          "origin": "https://todo-backend-sinatra.herokuapp.com",
+          "origin": "todo-backend-sinatra.herokuapp.com"
         })
         servirtium.addCallerResponseBodyReplacement({
-          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+          "origin": "http://localhost:61417",
+          "origin": "localhost:61417"
         })
         //TODO: addRecordResponseHeadersRemoval doesn't exist
         //servirtium.addRecordResponseHeadersRemoval(["via", "server"])
