@@ -31,9 +31,9 @@ else:
 
 driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 
-# time.sleep(5)
+time.sleep(5)
 
-driver.get("https://www.todobackend.com/specs/index.html?" + url + "/todos")
+driver.get("https://servirtium.github.io/compatibility-suite/index.html?" + url + "/todos")
 try:
     element = WebDriverWait(driver, 300).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
