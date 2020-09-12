@@ -10,16 +10,15 @@ const run = async() => {
       case 'record':
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
-        servirtium.addCallerRequestHeaderReplacements({
-          "origin": "https://todo-backend-sinatra.herokuapp.com",
-          "origin": "todo-backend-sinatra.herokuapp.com"
+        servirtium.setCallerRequestHeaderReplacements({
+          "http://localhost:61417": "https://todo-backend-sinatra.herokuapp.com",
+          "localhost:61417": "todo-backend-sinatra.herokuapp.com"
         })
-        servirtium.addCallerResponseBodyReplacement({
-          "origin": "http://localhost:61417",
-          "origin": "localhost:61417"
+        servirtium.setCallerResponseHeaderReplacements({
+          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
+          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
         })
-        //TODO: addRecordResponseHeadersRemoval doesn't exist
-        //servirtium.addRecordResponseHeadersRemoval(["via", "server"])
+        servirtium.setRecordResponseHeadersRemoval(["via", "server"])
         await servirtium.startRecord()
         process.on('SIGTERM', async (code) => {
           await servirtium.writeRecord()
@@ -29,7 +28,7 @@ const run = async() => {
       case 'playback':
         servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
         servirtium.setTestName("todobackend_test_suite")
-        servirtium.addCallerResponseBodyReplacement({
+        servirtium.setCallerResponseBodyReplacement({
           "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
           "todo-backend-sinatra.herokuapp.com": "localhost:61417"
         })
