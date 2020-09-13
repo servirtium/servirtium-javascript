@@ -24,6 +24,8 @@ const run = async() => {
           "https": "http",
         })
         servirtium.setRecordResponseHeadersRemoval(["via", "server"])
+        servirtium.setRecordRequestHeaderReplacements({"user-agent: .*": "user-agent: Chrome under Selenium control"})
+        servirtium.setRecordResponseHeaderReplacements({"date: .*": "date: Wed, 1 Jan 2020 01:23:45 GMT"})
         await servirtium.startRecord()
         process.on('SIGTERM', async (code) => {
           await servirtium.writeRecord()
