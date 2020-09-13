@@ -24,11 +24,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:42 GMT
+date: Sat, 12 Sep 2020 08:51:00 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-content-length: 1121
+content-length: 842
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
 x-frame-options: SAMEORIGIN
@@ -37,7 +37,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_18","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_18","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_18"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_4","title":"blah","order":523,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_6","title":"blah","order":10,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_6","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_6"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_8","title":"blah","order":10,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8"}]
+[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_9","title":"blah","order":523,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_3","title":"blah","order":95,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_3","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_3"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_11","title":"blah","order":95,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_11","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_11"}]
 ```
 
 
@@ -68,11 +68,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:43 GMT
+date: Sat, 12 Sep 2020 08:51:03 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_7
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10
 content-length: 270
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -82,7 +82,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"a todo","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_7","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_7","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_7"}
+{"title":"a todo","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_10","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10"}
 ```
 
 
@@ -113,7 +113,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:46 GMT
+date: Sat, 12 Sep 2020 08:51:04 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -154,7 +154,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:48 GMT
+date: Sat, 12 Sep 2020 08:51:06 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -194,7 +194,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:49 GMT
+date: Sat, 12 Sep 2020 08:51:07 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -238,7 +238,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:51 GMT
+date: Sat, 12 Sep 2020 08:51:09 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -279,11 +279,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:52 GMT
+date: Sat, 12 Sep 2020 08:51:11 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14
 content-length: 276
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -293,7 +293,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"walk the dog","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_17","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17"}
+{"title":"walk the dog","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_14","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14"}
 ```
 
 
@@ -323,7 +323,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:53 GMT
+date: Sat, 12 Sep 2020 08:51:12 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -336,7 +336,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_17","title":"walk the dog","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17"}]
+[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_14","title":"walk the dog","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14"}]
 ```
 
 
@@ -367,7 +367,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:56 GMT
+date: Sat, 12 Sep 2020 08:51:14 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -408,11 +408,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:56 GMT
+date: Sat, 12 Sep 2020 08:51:16 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -422,7 +422,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_16","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16"}
+{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_5","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5"}
 ```
 
 
@@ -452,7 +452,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:57 GMT
+date: Sat, 12 Sep 2020 08:51:18 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -465,7 +465,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_16","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16"}]
+[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_5","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5"}]
 ```
 
 
@@ -496,7 +496,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:46:59 GMT
+date: Sat, 12 Sep 2020 08:51:19 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -537,11 +537,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:01 GMT
+date: Sat, 12 Sep 2020 08:51:21 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -551,7 +551,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_9","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9"}
+{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_12","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12"}
 ```
 
 
@@ -581,7 +581,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:03 GMT
+date: Sat, 12 Sep 2020 08:51:23 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -594,7 +594,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_9","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_9"}]
+[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_12","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12"}]
 ```
 
 
@@ -625,7 +625,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:05 GMT
+date: Sat, 12 Sep 2020 08:51:25 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -666,11 +666,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:06 GMT
+date: Sat, 12 Sep 2020 08:51:26 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_11
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_15
 content-length: 271
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -680,7 +680,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"my todo","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_11","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_11","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_11"}
+{"title":"my todo","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_15","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_15","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_15"}
 ```
 
 
@@ -711,7 +711,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:09 GMT
+date: Sat, 12 Sep 2020 08:51:29 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -752,11 +752,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:10 GMT
+date: Sat, 12 Sep 2020 08:51:32 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4
 content-length: 278
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -766,7 +766,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"todo the first","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_10","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10"}
+{"title":"todo the first","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_4","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4"}
 ```
 
 
@@ -797,11 +797,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:10 GMT
+date: Sat, 12 Sep 2020 08:51:32 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -811,7 +811,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"todo the second","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_14","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14"}
+{"title":"todo the second","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_16","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16"}
 ```
 
 
@@ -841,7 +841,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:12 GMT
+date: Sat, 12 Sep 2020 08:51:34 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -854,7 +854,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_10","title":"todo the first","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_10"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_14","title":"todo the second","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_14"}]
+[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_4","title":"todo the first","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_4"},{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_16","title":"todo the second","order":0,"completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_16"}]
 ```
 
 
@@ -885,7 +885,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:14 GMT
+date: Sat, 12 Sep 2020 08:51:36 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -926,11 +926,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:15 GMT
+date: Sat, 12 Sep 2020 08:51:38 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_13
 content-length: 277
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -940,7 +940,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"initial title","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_5","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_5"}
+{"title":"initial title","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_13","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_13","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_13"}
 ```
 
 
@@ -971,7 +971,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:18 GMT
+date: Sat, 12 Sep 2020 08:51:41 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1012,11 +1012,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:19 GMT
+date: Sat, 12 Sep 2020 08:51:43 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_1
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_7
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1026,7 +1026,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_1","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_1","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_1"}
+{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_7","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_7","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_7"}
 ```
 
 
@@ -1057,7 +1057,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:22 GMT
+date: Sat, 12 Sep 2020 08:51:47 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1098,11 +1098,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:24 GMT
+date: Sat, 12 Sep 2020 08:51:47 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1112,7 +1112,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_2","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2"}
+{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_8","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8"}
 ```
 
 
@@ -1142,7 +1142,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:27 GMT
+date: Sat, 12 Sep 2020 08:51:50 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1155,7 +1155,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_2","title":"changed title","order":0,"completed":true,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2"}]
+[{"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_8","title":"changed title","order":0,"completed":true,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_8"}]
 ```
 
 
@@ -1186,7 +1186,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:30 GMT
+date: Sat, 12 Sep 2020 08:51:52 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1227,11 +1227,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:31 GMT
+date: Sat, 12 Sep 2020 08:51:53 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1241,7 +1241,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_12","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_12"}
+{"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_17","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_17"}
 ```
 
 
@@ -1271,7 +1271,7 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:34 GMT
+date: Sat, 12 Sep 2020 08:51:57 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1315,11 +1315,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:37 GMT
+date: Sat, 12 Sep 2020 08:51:58 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_13
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2
 content-length: 280
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1329,7 +1329,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","order":523,"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_13","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_13","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_13"}
+{"title":"blah","order":523,"uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_2","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_2"}
 ```
 
 
@@ -1360,11 +1360,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:38 GMT
+date: Sat, 12 Sep 2020 08:52:00 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_3
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_6
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1374,7 +1374,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"order":10,"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_3","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_3","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_3"}
+{"order":10,"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_6","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_6","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_6"}
 ```
 
 
@@ -1405,11 +1405,11 @@ host: localhost:61417
 ### Response headers recorded for playback:
 
 ```
-date: Sat, 12 Sep 2020 08:47:43 GMT
+date: Sat, 12 Sep 2020 08:52:02 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_15
+location: http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_1
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1419,5 +1419,5 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"order":10,"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_15","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_15","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_15"}
+{"order":10,"title":"blah","uid":"REPLACED_UUID_FOR_COMPATABILITY_TEST_1","completed":false,"href":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_1","url":"http://localhost:61417/todos/REPLACED_UUID_FOR_COMPATABILITY_TEST_1"}
 ```

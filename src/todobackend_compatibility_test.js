@@ -20,7 +20,8 @@ const run = async() => {
         })
         servirtium.setCallerResponseBodyReplacement({
           "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+          "todo-backend-sinatra.herokuapp.com": "localhost:61417",
+          "https": "http",
         })
         servirtium.setRecordResponseHeadersRemoval(["via", "server"])
         await servirtium.startRecord()
@@ -34,7 +35,8 @@ const run = async() => {
         servirtium.setTestName("todobackend_test_suite")
         servirtium.setCallerResponseBodyReplacement({
           "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+          "todo-backend-sinatra.herokuapp.com": "localhost:61417",
+          "https": "http",
         })
         await servirtium.startPlayback()
         process.on('SIGTERM', async (code) => {
