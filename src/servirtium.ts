@@ -189,8 +189,19 @@ export class Servirtium {
     Object.keys(this.recordRequestHeaderReplacements).forEach((regexString) => {
       const regex = new RegExp(regexString)
       Object.keys(callerRequestHeaders).forEach(headerKey => {
-        const headerValues = (callerRequestHeaders[headerKey] as string).replace(regex, this.recordRequestHeaderReplacements[regexString])
-        callerRequestHeaders[headerKey] = headerValues
+        if (regexString.startsWith("user-agent") && headerKey.startsWith("user-agent")) {
+          console.log("recordRequestHeaderReplacements-1: " +callerRequestHeaders[headerKey])
+        }
+
+        const line = headerKey + ": " + callerRequestHeaders[headerKey]
+        const line2 = line.replace(regex, this.recordRequestHeaderReplacements[regexString])
+        if (line != line2) {
+          callerRequestHeaders[headerKey] = line2.split(": ")[1]
+        }
+        if (regexString.startsWith("user-agent") && headerKey.startsWith("user-agent")) {
+          console.log("recordRequestHeaderReplacements-2: " +callerRequestHeaders[headerKey])
+        }
+
       })
     })
     // Assign record data
@@ -216,8 +227,17 @@ export class Servirtium {
     Object.keys(this.recordResponseHeaderReplacements).forEach((regexString) => {
       const regex = new RegExp(regexString)
       Object.keys(proxyRes.headers).forEach(headerKey => {
-        const headerValues = (proxyRes.headers[headerKey] as string).replace(regex, this.recordResponseHeaderReplacements[regexString])
-        proxyRes.headers[headerKey] = headerValues
+        const line = headerKey + ": " + proxyRes.headers[headerKey]
+        if (regexString.startsWith("date") && headerKey.startsWith("date")) {
+          console.log("recordResponseHeaderReplacement-1: " + proxyRes.headers[headerKey])
+        }
+        const line2 = line.replace(regex, this.recordResponseHeaderReplacements[regexString])
+        if (line != line2) {
+          proxyRes.headers[headerKey] = line2.split(": ")[1]
+        }
+        if (regexString.startsWith("date") && headerKey.startsWith("date")) {
+          console.log("recordResponseHeaderReplacement-2: " + proxyRes.headers[headerKey])
+        }
       })
     })
     this.recordResponseHeaders = proxyRes.headers
