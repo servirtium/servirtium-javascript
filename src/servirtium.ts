@@ -371,22 +371,23 @@ export class Servirtium {
       const content = await fs.readFileSync(fileDir, { encoding: 'utf8' })
       const interaction = this._getInteraction(content, this.interactionSequence)
       const { body, headers } = this._getPlaybackResponse(interaction)
-      // mutate response headers
+
+      // Mutate response for caller
       this.callerResponseHeadersRemoval.forEach((item) => {
         delete headers[item]
       })
-      Object.keys(this.callerResponseHeaderReplacements).forEach((item) => {
-        headers[item] = this.callerResponseHeaderReplacements[item]
+      Object.keys(this.callerResponseHeaderReplacements).forEach((regexString) => {
+        const regex = new RegExp(regexString)
+        Object.keys(headers).forEach(headerKey => {
+          const headerValues = (headers[headerKey] as string).replace(regex, this.callerResponseHeaderReplacements[regexString])
+          headers[headerKey] = headerValues
+        })
       })
-      // Forward headers response
-      Object.keys(headers)?.forEach((item: string) => {
-        res.setHeader(item, headers[item])
-      })
+      const callerResponseBody = this._replaceContent(body, this.callerResponseBodyReplacement)
+      const callerResponseBodyBuff = Buffer.from(callerResponseBody)
+
       res.writeHead(200)
-      // Mutate body response
-      const newBody = this._replaceContent(body, this.callerResponseBodyReplacement)
-      // Forward body response
-      res.end(newBody)
+      res.end(callerResponseBodyBuff)
     } catch (error) {
       res.writeHead(500)
       res.end('')
