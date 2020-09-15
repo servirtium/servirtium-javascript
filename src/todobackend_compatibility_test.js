@@ -25,7 +25,8 @@ const run = async() => {
         })
         servirtium.setRecordResponseHeadersRemoval(["via", "server"])
         servirtium.setRecordRequestHeaderReplacements({"user-agent: .*": "user-agent: Chrome under Selenium control"})
-        servirtium.setRecordResponseHeaderReplacements({"date: .*": "date: Wed, 1 Jan 2020 01:23:45 GMT"})
+        // Can't do date masking as the TODO test suite changes behavior if you do.
+        //servirtium.setRecordResponseHeaderReplacements({"date: .*": "date: Wed, 1 Jan 2020 01:23:45 GMT"})
         await servirtium.startRecord()
         process.on('SIGTERM', async (code) => {
           await servirtium.writeRecord()
