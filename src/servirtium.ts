@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 import http from 'http'
 import ejs from 'ejs'
-import { createProxyMiddleware, Options } from 'http-proxy-middleware'
+import {createProxyMiddleware, Options} from 'http-proxy-middleware'
 
 export type RegexReplacement = {[regex: string]: string}
 
@@ -353,22 +353,24 @@ export class Servirtium {
     return headers
   }
 
-  private _getPlaybackResponse = (interaction: string): { body: string, headers: http.IncomingHttpHeaders } => {
+  private _getPlaybackResponse = (interaction: string): { body: string, headers: http.IncomingHttpHeaders, statusCode: number } => {
 
     let sections = interaction.split("\n### ")
     let headers;
     let responseBody;
+    let statusCode: number;
 
     sections.forEach(section => {
       if (section.startsWith("Response headers recorded for playback")) {
         headers = this._parseHeaders(section.split("```")[1])
       }
       if (section.startsWith("Response body recorded for playback")) {
+        statusCode = +section.split("(")[1].split(": ")[0]
         let body = section.split("```")[1];
         responseBody = body.substring(1).trim()
       }
     })
-    return { body: responseBody, headers }
+    return { body: responseBody, headers, statusCode }
   }
 
   private _playbackHandler = async (req: http.IncomingMessage, res: http.ServerResponse) => {
@@ -376,7 +378,7 @@ export class Servirtium {
       const fileDir = path.resolve(process.cwd(), 'mocks', `${this.testName}.md`)
       const content = await fs.readFileSync(fileDir, { encoding: 'utf8' })
       const interaction = this._getInteraction(content, this.interactionSequence)
-      const { body, headers } = this._getPlaybackResponse(interaction)
+      const { body, headers, statusCode } = this._getPlaybackResponse(interaction)
 
       // Mutate response for caller
       this.callerResponseHeadersRemoval.forEach((item) => {
@@ -392,7 +394,7 @@ export class Servirtium {
       const callerResponseBody = this._replaceContent(body, this.callerResponseBodyReplacement)
       const callerResponseBodyBuff = Buffer.from(callerResponseBody)
 
-      res.writeHead(200)
+      res.writeHead(statusCode)
       res.end(callerResponseBodyBuff)
     } catch (error) {
       res.writeHead(500)
