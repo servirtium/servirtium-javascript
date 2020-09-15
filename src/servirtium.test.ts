@@ -32,9 +32,9 @@ describe('Servirtium', () => {
     })
   })
 
-  describe('addCallerRequestHeadersRemoval',  () => {
-    it('should set addCallerRequestHeadersRemoval', async () => {
-      await servirtium.addCallerRequestHeadersRemoval(['mock'])
+  describe('setCallerRequestHeadersRemoval',  () => {
+    it('should set setCallerRequestHeadersRemoval', async () => {
+      await servirtium.setCallerRequestHeadersRemoval(['mock'])
       expect(servirtium['callerRequestHeadersRemoval']).toEqual(['mock'])
     })
   })
