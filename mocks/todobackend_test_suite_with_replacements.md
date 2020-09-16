@@ -9,11 +9,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos the pre-requisites the api root responds to a GET (i.e. the server is up and accessible, CORS headers are set up)
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos the pre-requisites the api root responds to a GET (i.e. the server is up and accessible, CORS headers are set up)
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -25,11 +25,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:44 GMT
+date: Sun, 13 Sep 2020 15:58:32 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-content-length: 842
+content-length: 280
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
 x-frame-options: SAMEORIGIN
@@ -38,7 +38,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"f0c9f5e7-5594-47dc-ad3a-3c0c36d9e61a","title":"blah","order":523,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/f0c9f5e7-5594-47dc-ad3a-3c0c36d9e61a","url":"https://todo-backend-sinatra.herokuapp.com/todos/f0c9f5e7-5594-47dc-ad3a-3c0c36d9e61a"},{"uid":"d2b540b5-08e6-40ff-a2d5-99dce4ff3420","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/d2b540b5-08e6-40ff-a2d5-99dce4ff3420","url":"https://todo-backend-sinatra.herokuapp.com/todos/d2b540b5-08e6-40ff-a2d5-99dce4ff3420"},{"uid":"79c8a9e8-ef13-42d5-b819-5dd0d5ecae4c","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/79c8a9e8-ef13-42d5-b819-5dd0d5ecae4c","url":"https://todo-backend-sinatra.herokuapp.com/todos/79c8a9e8-ef13-42d5-b819-5dd0d5ecae4c"}]
+[{"uid":"6ab1b115-0287-4d61-896d-170c2af1f1cd","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/6ab1b115-0287-4d61-896d-170c2af1f1cd","url":"http://localhost:61417/todos/6ab1b115-0287-4d61-896d-170c2af1f1cd"}]
 ```
 
 
@@ -53,12 +53,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos the pre-requisites the api root responds to a POST with the todo which was posted to it
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos the pre-requisites the api root responds to a POST with the todo which was posted to it
 content-length: 18
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -70,11 +70,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:45 GMT
+date: Sun, 13 Sep 2020 15:58:34 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/95ca902b-4bb0-4405-9435-c850df4dfb25
+location: http://localhost:61417/todos/35bfcb42-6fb5-4217-badd-c762045c42f8
 content-length: 270
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -84,7 +84,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"a todo","uid":"95ca902b-4bb0-4405-9435-c850df4dfb25","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/95ca902b-4bb0-4405-9435-c850df4dfb25","url":"https://todo-backend-sinatra.herokuapp.com/todos/95ca902b-4bb0-4405-9435-c850df4dfb25"}
+{"title":"a todo","uid":"35bfcb42-6fb5-4217-badd-c762045c42f8","completed":false,"href":"http://localhost:61417/todos/35bfcb42-6fb5-4217-badd-c762045c42f8","url":"http://localhost:61417/todos/35bfcb42-6fb5-4217-badd-c762045c42f8"}
 ```
 
 
@@ -100,11 +100,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos the pre-requisites the api root responds successfully to a DELETE
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos the pre-requisites the api root responds successfully to a DELETE
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -116,7 +116,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:46 GMT
+date: Sun, 13 Sep 2020 15:58:36 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -142,11 +142,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos the pre-requisites after a DELETE the api root responds to a GET with a JSON representation of an empty array
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos the pre-requisites after a DELETE the api root responds to a GET with a JSON representation of an empty array
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -158,7 +158,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:47 GMT
+date: Sun, 13 Sep 2020 15:58:38 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -183,11 +183,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos the pre-requisites after a DELETE the api root responds to a GET with a JSON representation of an empty array
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos the pre-requisites after a DELETE the api root responds to a GET with a JSON representation of an empty array
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -199,7 +199,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:48 GMT
+date: Sun, 13 Sep 2020 15:58:39 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -228,11 +228,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos the pre-requisites after a DELETE the api root responds to a GET with a JSON representation of an empty array
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos the pre-requisites after a DELETE the api root responds to a GET with a JSON representation of an empty array
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -244,7 +244,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:50 GMT
+date: Sun, 13 Sep 2020 15:58:41 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -269,12 +269,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url adds a new todo to the list of todos at the root url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url adds a new todo to the list of todos at the root url
 content-length: 24
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -286,11 +286,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:50 GMT
+date: Sun, 13 Sep 2020 15:58:42 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0
+location: http://localhost:61417/todos/4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf
 content-length: 276
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -300,7 +300,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"walk the dog","uid":"911cf64e-e764-4378-b499-ca35fa6322c0","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0","url":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0"}
+{"title":"walk the dog","uid":"4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf","completed":false,"href":"http://localhost:61417/todos/4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf","url":"http://localhost:61417/todos/4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf"}
 ```
 
 
@@ -315,11 +315,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url adds a new todo to the list of todos at the root url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url adds a new todo to the list of todos at the root url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -331,7 +331,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:51 GMT
+date: Sun, 13 Sep 2020 15:58:43 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -344,7 +344,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"911cf64e-e764-4378-b499-ca35fa6322c0","title":"walk the dog","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0","url":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0"}]
+[{"uid":"4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf","title":"walk the dog","order":0,"completed":false,"href":"http://localhost:61417/todos/4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf","url":"http://localhost:61417/todos/4c0b43ec-9b86-4e28-9406-ffccb1a5c3cf"}]
 ```
 
 
@@ -360,11 +360,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url adds a new todo to the list of todos at the root url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url adds a new todo to the list of todos at the root url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -376,7 +376,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:52 GMT
+date: Sun, 13 Sep 2020 15:58:45 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -401,12 +401,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url sets up a new todo as initially not completed
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url sets up a new todo as initially not completed
 content-length: 16
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -418,11 +418,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:54 GMT
+date: Sun, 13 Sep 2020 15:58:46 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044
+location: http://localhost:61417/todos/951e3693-c8ba-4c29-b561-44d8ac44383a
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -432,7 +432,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"6787fd17-2ba4-457e-9aba-d58c2dc23044","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044","url":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044"}
+{"title":"blah","uid":"951e3693-c8ba-4c29-b561-44d8ac44383a","completed":false,"href":"http://localhost:61417/todos/951e3693-c8ba-4c29-b561-44d8ac44383a","url":"http://localhost:61417/todos/951e3693-c8ba-4c29-b561-44d8ac44383a"}
 ```
 
 
@@ -447,11 +447,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url sets up a new todo as initially not completed
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url sets up a new todo as initially not completed
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -463,7 +463,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:55 GMT
+date: Sun, 13 Sep 2020 15:58:47 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -476,7 +476,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"6787fd17-2ba4-457e-9aba-d58c2dc23044","title":"blah","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044","url":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044"}]
+[{"uid":"951e3693-c8ba-4c29-b561-44d8ac44383a","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/951e3693-c8ba-4c29-b561-44d8ac44383a","url":"http://localhost:61417/todos/951e3693-c8ba-4c29-b561-44d8ac44383a"}]
 ```
 
 
@@ -492,11 +492,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url sets up a new todo as initially not completed
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url sets up a new todo as initially not completed
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -508,7 +508,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:56 GMT
+date: Sun, 13 Sep 2020 15:58:49 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -533,12 +533,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url each new todo has a url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url each new todo has a url
 content-length: 16
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -550,11 +550,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:57 GMT
+date: Sun, 13 Sep 2020 15:58:50 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad
+location: http://localhost:61417/todos/e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -564,7 +564,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","url":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad"}
+{"title":"blah","uid":"e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8","completed":false,"href":"http://localhost:61417/todos/e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8","url":"http://localhost:61417/todos/e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8"}
 ```
 
 
@@ -579,11 +579,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url each new todo has a url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url each new todo has a url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -595,7 +595,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:58 GMT
+date: Sun, 13 Sep 2020 15:58:52 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -608,7 +608,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","title":"blah","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","url":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad"}]
+[{"uid":"e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8","title":"blah","order":0,"completed":false,"href":"http://localhost:61417/todos/e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8","url":"http://localhost:61417/todos/e4e6659b-eaf7-4c0e-afb5-6027c1ce03a8"}]
 ```
 
 
@@ -624,11 +624,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url each new todo has a url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url each new todo has a url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -640,7 +640,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:59 GMT
+date: Sun, 13 Sep 2020 15:58:53 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -665,12 +665,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url each new todo has a url, which returns a todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url each new todo has a url, which returns a todo
 content-length: 19
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -682,11 +682,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:00 GMT
+date: Sun, 13 Sep 2020 15:58:54 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c
+location: http://localhost:61417/todos/0cd76655-1ae2-4477-858b-bda176e96ae6
 content-length: 271
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -696,11 +696,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"my todo","uid":"1505bfee-0ecc-4103-9e03-07392be7904c","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c","url":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c"}
+{"title":"my todo","uid":"0cd76655-1ae2-4477-858b-bda176e96ae6","completed":false,"href":"http://localhost:61417/todos/0cd76655-1ae2-4477-858b-bda176e96ae6","url":"http://localhost:61417/todos/0cd76655-1ae2-4477-858b-bda176e96ae6"}
 ```
 
 
-## Interaction 16: GET /todos/1505bfee-0ecc-4103-9e03-07392be7904c
+## Interaction 16: GET /todos/0cd76655-1ae2-4477-858b-bda176e96ae6
 ### Request headers recorded for playback:
 
 ```
@@ -711,11 +711,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url each new todo has a url, which returns a todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url each new todo has a url, which returns a todo
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -727,7 +727,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:01 GMT
+date: Sun, 13 Sep 2020 15:58:55 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -740,7 +740,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"1505bfee-0ecc-4103-9e03-07392be7904c","title":"my todo","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c","url":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c"}
+{"uid":"0cd76655-1ae2-4477-858b-bda176e96ae6","title":"my todo","order":0,"completed":false,"href":"http://localhost:61417/todos/0cd76655-1ae2-4477-858b-bda176e96ae6","url":"http://localhost:61417/todos/0cd76655-1ae2-4477-858b-bda176e96ae6"}
 ```
 
 
@@ -756,11 +756,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos storing new todos by posting to the root url each new todo has a url, which returns a todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos storing new todos by posting to the root url each new todo has a url, which returns a todo
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -772,7 +772,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:03 GMT
+date: Sun, 13 Sep 2020 15:58:57 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -797,12 +797,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
 content-length: 27
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -814,11 +814,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:04 GMT
+date: Sun, 13 Sep 2020 15:58:59 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926
+location: http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -828,7 +828,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"todo the second","uid":"a6b672d1-98d6-4c9f-a01e-bb7066c2b926","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926","url":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926"}
+{"title":"todo the second","uid":"524fc534-260c-4f7a-9636-10263ffa4598","completed":false,"href":"http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598","url":"http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598"}
 ```
 
 
@@ -843,12 +843,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
 content-length: 27
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -860,11 +860,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:04 GMT
+date: Sun, 13 Sep 2020 15:58:59 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6
+location: http://localhost:61417/todos/b7bd10b8-d588-46e7-8414-7edb2f1b7c46
 content-length: 278
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -874,7 +874,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"todo the first","uid":"7c4ce266-0314-4515-8a97-b29536c8b9a6","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6","url":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6"}
+{"title":"todo the first","uid":"b7bd10b8-d588-46e7-8414-7edb2f1b7c46","completed":false,"href":"http://localhost:61417/todos/b7bd10b8-d588-46e7-8414-7edb2f1b7c46","url":"http://localhost:61417/todos/b7bd10b8-d588-46e7-8414-7edb2f1b7c46"}
 ```
 
 
@@ -889,11 +889,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -905,7 +905,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:05 GMT
+date: Sun, 13 Sep 2020 15:59:00 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -918,11 +918,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"a6b672d1-98d6-4c9f-a01e-bb7066c2b926","title":"todo the second","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926","url":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926"},{"uid":"7c4ce266-0314-4515-8a97-b29536c8b9a6","title":"todo the first","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6","url":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6"}]
+[{"uid":"524fc534-260c-4f7a-9636-10263ffa4598","title":"todo the second","order":0,"completed":false,"href":"http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598","url":"http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598"},{"uid":"b7bd10b8-d588-46e7-8414-7edb2f1b7c46","title":"todo the first","order":0,"completed":false,"href":"http://localhost:61417/todos/b7bd10b8-d588-46e7-8414-7edb2f1b7c46","url":"http://localhost:61417/todos/b7bd10b8-d588-46e7-8414-7edb2f1b7c46"}]
 ```
 
 
-## Interaction 21: GET /todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926
+## Interaction 21: GET /todos/524fc534-260c-4f7a-9636-10263ffa4598
 ### Request headers recorded for playback:
 
 ```
@@ -933,11 +933,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -949,7 +949,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:07 GMT
+date: Sun, 13 Sep 2020 15:59:02 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -962,7 +962,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"a6b672d1-98d6-4c9f-a01e-bb7066c2b926","title":"todo the second","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926","url":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926"}
+{"uid":"524fc534-260c-4f7a-9636-10263ffa4598","title":"todo the second","order":0,"completed":false,"href":"http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598","url":"http://localhost:61417/todos/524fc534-260c-4f7a-9636-10263ffa4598"}
 ```
 
 
@@ -978,11 +978,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can navigate from a list of todos to an individual todo via urls
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -994,7 +994,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:08 GMT
+date: Sun, 13 Sep 2020 15:59:03 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1019,12 +1019,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can change the todo's title by PATCHing to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can change the todo's title by PATCHing to the todo's url
 content-length: 25
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1036,11 +1036,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:09 GMT
+date: Sun, 13 Sep 2020 15:59:05 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb
+location: http://localhost:61417/todos/ace5e2ea-e81f-47d6-8870-4c9321189630
 content-length: 277
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1050,11 +1050,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"initial title","uid":"55ea1bc3-d428-44f7-8b07-c63e26d144eb","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb","url":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb"}
+{"title":"initial title","uid":"ace5e2ea-e81f-47d6-8870-4c9321189630","completed":false,"href":"http://localhost:61417/todos/ace5e2ea-e81f-47d6-8870-4c9321189630","url":"http://localhost:61417/todos/ace5e2ea-e81f-47d6-8870-4c9321189630"}
 ```
 
 
-## Interaction 24: PATCH /todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb
+## Interaction 24: PATCH /todos/ace5e2ea-e81f-47d6-8870-4c9321189630
 ### Request headers recorded for playback:
 
 ```
@@ -1065,12 +1065,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can change the todo's title by PATCHing to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can change the todo's title by PATCHing to the todo's url
 content-length: 25
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1082,7 +1082,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:10 GMT
+date: Sun, 13 Sep 2020 15:59:06 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1095,7 +1095,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"55ea1bc3-d428-44f7-8b07-c63e26d144eb","title":"bathe the cat","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb","url":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb"}
+{"uid":"ace5e2ea-e81f-47d6-8870-4c9321189630","title":"bathe the cat","order":0,"completed":false,"href":"http://localhost:61417/todos/ace5e2ea-e81f-47d6-8870-4c9321189630","url":"http://localhost:61417/todos/ace5e2ea-e81f-47d6-8870-4c9321189630"}
 ```
 
 
@@ -1111,11 +1111,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can change the todo's title by PATCHing to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can change the todo's title by PATCHing to the todo's url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1127,7 +1127,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:12 GMT
+date: Sun, 13 Sep 2020 15:59:07 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1152,12 +1152,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can change the todo's completedness by PATCHing to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can change the todo's completedness by PATCHing to the todo's url
 content-length: 16
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1169,11 +1169,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:13 GMT
+date: Sun, 13 Sep 2020 15:59:08 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a
+location: http://localhost:61417/todos/64cef6a0-c710-44ee-9e02-00dd62af1d7a
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1183,11 +1183,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"5b87b8c7-b10c-4513-abef-3ccf425b774a","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a","url":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a"}
+{"title":"blah","uid":"64cef6a0-c710-44ee-9e02-00dd62af1d7a","completed":false,"href":"http://localhost:61417/todos/64cef6a0-c710-44ee-9e02-00dd62af1d7a","url":"http://localhost:61417/todos/64cef6a0-c710-44ee-9e02-00dd62af1d7a"}
 ```
 
 
-## Interaction 27: PATCH /todos/5b87b8c7-b10c-4513-abef-3ccf425b774a
+## Interaction 27: PATCH /todos/64cef6a0-c710-44ee-9e02-00dd62af1d7a
 ### Request headers recorded for playback:
 
 ```
@@ -1198,12 +1198,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can change the todo's completedness by PATCHing to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can change the todo's completedness by PATCHing to the todo's url
 content-length: 18
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1215,7 +1215,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:14 GMT
+date: Sun, 13 Sep 2020 15:59:09 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1228,7 +1228,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"5b87b8c7-b10c-4513-abef-3ccf425b774a","title":"blah","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a","url":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a"}
+{"uid":"64cef6a0-c710-44ee-9e02-00dd62af1d7a","title":"blah","order":0,"completed":true,"href":"http://localhost:61417/todos/64cef6a0-c710-44ee-9e02-00dd62af1d7a","url":"http://localhost:61417/todos/64cef6a0-c710-44ee-9e02-00dd62af1d7a"}
 ```
 
 
@@ -1244,11 +1244,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can change the todo's completedness by PATCHing to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can change the todo's completedness by PATCHing to the todo's url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1260,7 +1260,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:16 GMT
+date: Sun, 13 Sep 2020 15:59:11 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1285,12 +1285,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
 content-length: 16
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1302,11 +1302,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:17 GMT
+date: Sun, 13 Sep 2020 15:59:13 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3
+location: http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1316,11 +1316,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}
+{"title":"blah","uid":"adca5b1a-b31f-4a99-bb9c-73add44226c3","completed":false,"href":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3","url":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3"}
 ```
 
 
-## Interaction 30: PATCH /todos/777631a2-e67f-45f9-89f0-803d67bb4fc3
+## Interaction 30: PATCH /todos/adca5b1a-b31f-4a99-bb9c-73add44226c3
 ### Request headers recorded for playback:
 
 ```
@@ -1331,12 +1331,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
 content-length: 42
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1348,7 +1348,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:18 GMT
+date: Sun, 13 Sep 2020 15:59:14 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1361,7 +1361,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}
+{"uid":"adca5b1a-b31f-4a99-bb9c-73add44226c3","title":"changed title","order":0,"completed":true,"href":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3","url":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3"}
 ```
 
 
@@ -1376,11 +1376,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1392,7 +1392,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:19 GMT
+date: Sun, 13 Sep 2020 15:59:14 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1405,7 +1405,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}
+{"uid":"adca5b1a-b31f-4a99-bb9c-73add44226c3","title":"changed title","order":0,"completed":true,"href":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3","url":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3"}
 ```
 
 
@@ -1420,11 +1420,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1436,7 +1436,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:19 GMT
+date: Sun, 13 Sep 2020 15:59:15 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1449,7 +1449,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}]
+[{"uid":"adca5b1a-b31f-4a99-bb9c-73add44226c3","title":"changed title","order":0,"completed":true,"href":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3","url":"http://localhost:61417/todos/adca5b1a-b31f-4a99-bb9c-73add44226c3"}]
 ```
 
 
@@ -1465,11 +1465,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1481,7 +1481,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:20 GMT
+date: Sun, 13 Sep 2020 15:59:16 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1506,12 +1506,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can delete a todo making a DELETE request to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can delete a todo making a DELETE request to the todo's url
 content-length: 16
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1523,11 +1523,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:21 GMT
+date: Sun, 13 Sep 2020 15:59:18 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d
+location: http://localhost:61417/todos/3b078400-d7de-4933-9d7f-75f0c3443c61
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1537,11 +1537,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"ed1ee011-a4ca-4b1d-9691-aa439b41495d","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d","url":"https://todo-backend-sinatra.herokuapp.com/todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d"}
+{"title":"blah","uid":"3b078400-d7de-4933-9d7f-75f0c3443c61","completed":false,"href":"http://localhost:61417/todos/3b078400-d7de-4933-9d7f-75f0c3443c61","url":"http://localhost:61417/todos/3b078400-d7de-4933-9d7f-75f0c3443c61"}
 ```
 
 
-## Interaction 35: DELETE /todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d
+## Interaction 35: DELETE /todos/3b078400-d7de-4933-9d7f-75f0c3443c61
 ### Request headers recorded for playback:
 
 ```
@@ -1553,11 +1553,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can delete a todo making a DELETE request to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can delete a todo making a DELETE request to the todo's url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1569,7 +1569,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:22 GMT
+date: Sun, 13 Sep 2020 15:59:20 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1594,11 +1594,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo can delete a todo making a DELETE request to the todo's url
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos working with an existing todo can delete a todo making a DELETE request to the todo's url
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1610,7 +1610,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:23 GMT
+date: Sun, 13 Sep 2020 15:59:21 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1638,12 +1638,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos tracking todo order can create a todo with an order field
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos tracking todo order can create a todo with an order field
 content-length: 28
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1655,11 +1655,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:25 GMT
+date: Sun, 13 Sep 2020 15:59:22 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/4c7dba4a-792b-4670-a030-15b506fae3dc
+location: http://localhost:61417/todos/3385b027-30e5-4084-a37c-a6a8093ad049
 content-length: 280
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1669,7 +1669,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","order":523,"uid":"4c7dba4a-792b-4670-a030-15b506fae3dc","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/4c7dba4a-792b-4670-a030-15b506fae3dc","url":"https://todo-backend-sinatra.herokuapp.com/todos/4c7dba4a-792b-4670-a030-15b506fae3dc"}
+{"title":"blah","order":523,"uid":"3385b027-30e5-4084-a37c-a6a8093ad049","completed":false,"href":"http://localhost:61417/todos/3385b027-30e5-4084-a37c-a6a8093ad049","url":"http://localhost:61417/todos/3385b027-30e5-4084-a37c-a6a8093ad049"}
 ```
 
 
@@ -1684,12 +1684,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos tracking todo order can PATCH a todo to change its order
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos tracking todo order can PATCH a todo to change its order
 content-length: 27
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1701,11 +1701,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:25 GMT
+date: Sun, 13 Sep 2020 15:59:23 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b
+location: http://localhost:61417/todos/f58f1aba-f99c-4270-9301-893275605282
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1715,11 +1715,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"order":10,"title":"blah","uid":"7191468f-6edb-498e-b950-aa5fa5e3eb1b","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b","url":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b"}
+{"order":10,"title":"blah","uid":"f58f1aba-f99c-4270-9301-893275605282","completed":false,"href":"http://localhost:61417/todos/f58f1aba-f99c-4270-9301-893275605282","url":"http://localhost:61417/todos/f58f1aba-f99c-4270-9301-893275605282"}
 ```
 
 
-## Interaction 39: PATCH /todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b
+## Interaction 39: PATCH /todos/f58f1aba-f99c-4270-9301-893275605282
 ### Request headers recorded for playback:
 
 ```
@@ -1730,12 +1730,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos tracking todo order can PATCH a todo to change its order
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos tracking todo order can PATCH a todo to change its order
 content-length: 12
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1747,7 +1747,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:26 GMT
+date: Sun, 13 Sep 2020 15:59:25 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1760,7 +1760,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"7191468f-6edb-498e-b950-aa5fa5e3eb1b","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b","url":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b"}
+{"uid":"f58f1aba-f99c-4270-9301-893275605282","title":"blah","order":95,"completed":false,"href":"http://localhost:61417/todos/f58f1aba-f99c-4270-9301-893275605282","url":"http://localhost:61417/todos/f58f1aba-f99c-4270-9301-893275605282"}
 ```
 
 
@@ -1775,12 +1775,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos tracking todo order remembers changes to a todo's order
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos tracking todo order remembers changes to a todo's order
 content-length: 27
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1792,11 +1792,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:28 GMT
+date: Sun, 13 Sep 2020 15:59:25 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d
+location: http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1806,11 +1806,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"order":10,"title":"blah","uid":"816177eb-71ef-4eb4-a0c2-9041b426ee6d","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d","url":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d"}
+{"order":10,"title":"blah","uid":"6cd4d679-1cb8-4b20-b711-a75511f35c0a","completed":false,"href":"http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a","url":"http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a"}
 ```
 
 
-## Interaction 41: PATCH /todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d
+## Interaction 41: PATCH /todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a
 ### Request headers recorded for playback:
 
 ```
@@ -1821,12 +1821,12 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos tracking todo order remembers changes to a todo's order
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos tracking todo order remembers changes to a todo's order
 content-length: 12
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1838,7 +1838,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:29 GMT
+date: Sun, 13 Sep 2020 15:59:26 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1851,11 +1851,11 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"816177eb-71ef-4eb4-a0c2-9041b426ee6d","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d","url":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d"}
+{"uid":"6cd4d679-1cb8-4b20-b711-a75511f35c0a","title":"blah","order":95,"completed":false,"href":"http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a","url":"http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a"}
 ```
 
 
-## Interaction 42: GET /todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d
+## Interaction 42: GET /todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a
 ### Request headers recorded for playback:
 
 ```
@@ -1866,11 +1866,11 @@ sec-fetch-mode: cors
 sec-fetch-site: cross-site
 origin: https://servirtium.github.io
 content-type: application/json
-user-agent: Chrome under Selenium control
+user-agent: Servirtium-Testing
 accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos tracking todo order remembers changes to a todo's order
+fulltitle: Todo-Backend API residing at http://localhost:61417/todos tracking todo order remembers changes to a todo's order
 connection: close
-host: todo-backend-sinatra.herokuapp.com
+host: localhost:61417
 ```
 
 ### Request body recorded for playback ():
@@ -1882,7 +1882,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:30 GMT
+date: Sun, 13 Sep 2020 15:59:27 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1895,5 +1895,5 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"816177eb-71ef-4eb4-a0c2-9041b426ee6d","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d","url":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d"}
+{"uid":"6cd4d679-1cb8-4b20-b711-a75511f35c0a","title":"blah","order":95,"completed":false,"href":"http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a","url":"http://localhost:61417/todos/6cd4d679-1cb8-4b20-b711-a75511f35c0a"}
 ```

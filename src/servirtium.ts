@@ -161,7 +161,7 @@ export class Servirtium {
   private _replaceContent = (content: string, regexReplacement: RegexReplacement): string => {
     let finalContent = content
     Object.keys(regexReplacement).forEach(item => {
-      const regex = new RegExp(item)
+      const regex = new RegExp(item, "g")
       finalContent = finalContent.replace(regex, regexReplacement[item])
     })
     return finalContent
@@ -174,10 +174,13 @@ export class Servirtium {
     })
     const headers = proxyReq.getHeaders()
     Object.keys(this.callerRequestHeaderReplacements).forEach((regexString) => {
-      const regex = new RegExp(regexString)
+      const regex = new RegExp(regexString, "g")
       Object.keys(headers).forEach(headerKey => {
-        const headerValues = (headers[headerKey] as string).replace(regex, this.callerRequestHeaderReplacements[regexString])
-        proxyReq.setHeader(headerKey, headerValues)
+        const line = `${headerKey}: ${headers[headerKey]}`
+        const line2 = line.replace(regex, this.callerRequestHeaderReplacements[regexString])
+        if (line != line2) {
+          proxyReq.setHeader(headerKey, line2.split(": ")[1])
+        }
       })
     })
 
@@ -187,9 +190,9 @@ export class Servirtium {
       delete callerRequestHeaders[item]
     })
     Object.keys(this.recordRequestHeaderReplacements).forEach((regexString) => {
-      const regex = new RegExp(regexString)
+      const regex = new RegExp(regexString, "g")
       Object.keys(callerRequestHeaders).forEach(headerKey => {
-        const line = headerKey + ": " + callerRequestHeaders[headerKey]
+        const line = `${headerKey}: ${callerRequestHeaders[headerKey]}`
         const line2 = line.replace(regex, this.recordRequestHeaderReplacements[regexString])
         if (line != line2) {
           callerRequestHeaders[headerKey] = line2.split(": ")[1]
@@ -217,7 +220,7 @@ export class Servirtium {
       delete proxyRes.headers[item]
     })
     Object.keys(this.recordResponseHeaderReplacements).forEach((regexString) => {
-      const regex = new RegExp(regexString)
+      const regex = new RegExp(regexString, "g")
       Object.keys(proxyRes.headers).forEach(headerKey => {
         const line = headerKey + ": " + proxyRes.headers[headerKey]
         const line2 = line.replace(regex, this.recordResponseHeaderReplacements[regexString])
@@ -245,10 +248,13 @@ export class Servirtium {
         delete proxyRes.headers[item]
       })
       Object.keys(this.callerResponseHeaderReplacements).forEach((regexString) => {
-        const regex = new RegExp(regexString)
+        const regex = new RegExp(regexString, "g")
         Object.keys(proxyRes.headers).forEach(headerKey => {
-          const headerValues = (proxyRes.headers[headerKey] as string).replace(regex, this.callerResponseHeaderReplacements[regexString])
-          proxyRes.headers[headerKey] = headerValues
+          const line = headerKey + ": " + proxyRes.headers[headerKey]
+          const line2 = line.replace(regex, this.callerResponseHeaderReplacements[regexString])
+          if (line != line2) {
+            proxyRes.headers[headerKey] = line2.split(": ")[1]
+          }
         })
       })
       const callerResponseBody = this._replaceContent(finalContent, this.callerResponseBodyReplacement)
@@ -385,8 +391,14 @@ export class Servirtium {
         delete headers[item]
       })
       Object.keys(this.callerResponseHeaderReplacements).forEach((regexString) => {
-        const regex = new RegExp(regexString)
+        const regex = new RegExp(regexString, "g")
         Object.keys(headers).forEach(headerKey => {
+          const line = headerKey + ": " + headers[headerKey]
+          const line2 = line.replace(regex, this.callerResponseHeaderReplacements[regexString])
+          if (line != line2) {
+            headers[headerKey] = line2.split(": ")[1]
+          }
+
           const headerValues = (headers[headerKey] as string).replace(regex, this.callerResponseHeaderReplacements[regexString])
           headers[headerKey] = headerValues
         })
