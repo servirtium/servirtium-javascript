@@ -4,10 +4,11 @@
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -25,7 +26,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:44 GMT
+date: Wed, 16 Sep 2020 14:27:12 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -38,7 +39,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"f0c9f5e7-5594-47dc-ad3a-3c0c36d9e61a","title":"blah","order":523,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/f0c9f5e7-5594-47dc-ad3a-3c0c36d9e61a","url":"https://todo-backend-sinatra.herokuapp.com/todos/f0c9f5e7-5594-47dc-ad3a-3c0c36d9e61a"},{"uid":"d2b540b5-08e6-40ff-a2d5-99dce4ff3420","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/d2b540b5-08e6-40ff-a2d5-99dce4ff3420","url":"https://todo-backend-sinatra.herokuapp.com/todos/d2b540b5-08e6-40ff-a2d5-99dce4ff3420"},{"uid":"79c8a9e8-ef13-42d5-b819-5dd0d5ecae4c","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/79c8a9e8-ef13-42d5-b819-5dd0d5ecae4c","url":"https://todo-backend-sinatra.herokuapp.com/todos/79c8a9e8-ef13-42d5-b819-5dd0d5ecae4c"}]
+[{"uid":"1eea045d-f670-4940-a745-8ffd5f7d68c8","title":"blah","order":523,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/1eea045d-f670-4940-a745-8ffd5f7d68c8","url":"https://todo-backend-sinatra.herokuapp.com/todos/1eea045d-f670-4940-a745-8ffd5f7d68c8"},{"uid":"c5faf470-7ea8-42c2-9cf9-f77ab24ae823","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c5faf470-7ea8-42c2-9cf9-f77ab24ae823","url":"https://todo-backend-sinatra.herokuapp.com/todos/c5faf470-7ea8-42c2-9cf9-f77ab24ae823"},{"uid":"7147d6b1-f3ca-422e-8ed4-86fcfeae2c53","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7147d6b1-f3ca-422e-8ed4-86fcfeae2c53","url":"https://todo-backend-sinatra.herokuapp.com/todos/7147d6b1-f3ca-422e-8ed4-86fcfeae2c53"}]
 ```
 
 
@@ -48,10 +49,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -70,11 +72,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:45 GMT
+date: Wed, 16 Sep 2020 14:27:13 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/95ca902b-4bb0-4405-9435-c850df4dfb25
+location: https://todo-backend-sinatra.herokuapp.com/todos/3b63ddc6-54ed-4c75-8e94-0d474fb41582
 content-length: 270
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -84,7 +86,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"a todo","uid":"95ca902b-4bb0-4405-9435-c850df4dfb25","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/95ca902b-4bb0-4405-9435-c850df4dfb25","url":"https://todo-backend-sinatra.herokuapp.com/todos/95ca902b-4bb0-4405-9435-c850df4dfb25"}
+{"title":"a todo","uid":"3b63ddc6-54ed-4c75-8e94-0d474fb41582","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/3b63ddc6-54ed-4c75-8e94-0d474fb41582","url":"https://todo-backend-sinatra.herokuapp.com/todos/3b63ddc6-54ed-4c75-8e94-0d474fb41582"}
 ```
 
 
@@ -95,10 +97,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -116,7 +119,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:46 GMT
+date: Wed, 16 Sep 2020 14:27:13 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -137,10 +140,11 @@ x-content-type-options: nosniff
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -158,7 +162,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:47 GMT
+date: Wed, 16 Sep 2020 14:27:14 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -178,10 +182,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -199,7 +204,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:48 GMT
+date: Wed, 16 Sep 2020 14:27:14 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -223,10 +228,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -244,7 +250,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:50 GMT
+date: Wed, 16 Sep 2020 14:27:14 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -264,10 +270,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -286,11 +293,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:50 GMT
+date: Wed, 16 Sep 2020 14:27:15 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0
+location: https://todo-backend-sinatra.herokuapp.com/todos/647ddb19-cad1-4818-a84d-1be5c2876927
 content-length: 276
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -300,7 +307,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"walk the dog","uid":"911cf64e-e764-4378-b499-ca35fa6322c0","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0","url":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0"}
+{"title":"walk the dog","uid":"647ddb19-cad1-4818-a84d-1be5c2876927","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/647ddb19-cad1-4818-a84d-1be5c2876927","url":"https://todo-backend-sinatra.herokuapp.com/todos/647ddb19-cad1-4818-a84d-1be5c2876927"}
 ```
 
 
@@ -310,10 +317,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -331,7 +339,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:51 GMT
+date: Wed, 16 Sep 2020 14:27:16 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -344,7 +352,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"911cf64e-e764-4378-b499-ca35fa6322c0","title":"walk the dog","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0","url":"https://todo-backend-sinatra.herokuapp.com/todos/911cf64e-e764-4378-b499-ca35fa6322c0"}]
+[{"uid":"647ddb19-cad1-4818-a84d-1be5c2876927","title":"walk the dog","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/647ddb19-cad1-4818-a84d-1be5c2876927","url":"https://todo-backend-sinatra.herokuapp.com/todos/647ddb19-cad1-4818-a84d-1be5c2876927"}]
 ```
 
 
@@ -355,10 +363,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -376,7 +385,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:52 GMT
+date: Wed, 16 Sep 2020 14:27:15 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -396,10 +405,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -418,11 +428,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:54 GMT
+date: Wed, 16 Sep 2020 14:27:16 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044
+location: https://todo-backend-sinatra.herokuapp.com/todos/c84391ef-fdfa-4981-92ab-3a8c6519d755
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -432,7 +442,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"6787fd17-2ba4-457e-9aba-d58c2dc23044","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044","url":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044"}
+{"title":"blah","uid":"c84391ef-fdfa-4981-92ab-3a8c6519d755","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c84391ef-fdfa-4981-92ab-3a8c6519d755","url":"https://todo-backend-sinatra.herokuapp.com/todos/c84391ef-fdfa-4981-92ab-3a8c6519d755"}
 ```
 
 
@@ -442,10 +452,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -463,7 +474,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:55 GMT
+date: Wed, 16 Sep 2020 14:27:17 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -476,7 +487,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"6787fd17-2ba4-457e-9aba-d58c2dc23044","title":"blah","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044","url":"https://todo-backend-sinatra.herokuapp.com/todos/6787fd17-2ba4-457e-9aba-d58c2dc23044"}]
+[{"uid":"c84391ef-fdfa-4981-92ab-3a8c6519d755","title":"blah","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c84391ef-fdfa-4981-92ab-3a8c6519d755","url":"https://todo-backend-sinatra.herokuapp.com/todos/c84391ef-fdfa-4981-92ab-3a8c6519d755"}]
 ```
 
 
@@ -487,10 +498,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -508,7 +520,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:56 GMT
+date: Wed, 16 Sep 2020 14:27:17 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -528,10 +540,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -550,11 +563,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:57 GMT
+date: Wed, 16 Sep 2020 14:27:18 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad
+location: https://todo-backend-sinatra.herokuapp.com/todos/f6217651-4f5d-44e2-9ae4-907862852ad3
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -564,7 +577,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","url":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad"}
+{"title":"blah","uid":"f6217651-4f5d-44e2-9ae4-907862852ad3","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/f6217651-4f5d-44e2-9ae4-907862852ad3","url":"https://todo-backend-sinatra.herokuapp.com/todos/f6217651-4f5d-44e2-9ae4-907862852ad3"}
 ```
 
 
@@ -574,10 +587,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -595,7 +609,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:58 GMT
+date: Wed, 16 Sep 2020 14:27:18 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -608,7 +622,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","title":"blah","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad","url":"https://todo-backend-sinatra.herokuapp.com/todos/88e2ae5d-bb3e-494f-b2d1-b67dc0b3a9ad"}]
+[{"uid":"f6217651-4f5d-44e2-9ae4-907862852ad3","title":"blah","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/f6217651-4f5d-44e2-9ae4-907862852ad3","url":"https://todo-backend-sinatra.herokuapp.com/todos/f6217651-4f5d-44e2-9ae4-907862852ad3"}]
 ```
 
 
@@ -619,10 +633,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -640,7 +655,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:30:59 GMT
+date: Wed, 16 Sep 2020 14:27:18 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -660,10 +675,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -682,11 +698,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:00 GMT
+date: Wed, 16 Sep 2020 14:27:19 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c
+location: https://todo-backend-sinatra.herokuapp.com/todos/9261a618-04e6-4a6f-aece-3ac9aa4bd991
 content-length: 271
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -696,20 +712,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"my todo","uid":"1505bfee-0ecc-4103-9e03-07392be7904c","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c","url":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c"}
+{"title":"my todo","uid":"9261a618-04e6-4a6f-aece-3ac9aa4bd991","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/9261a618-04e6-4a6f-aece-3ac9aa4bd991","url":"https://todo-backend-sinatra.herokuapp.com/todos/9261a618-04e6-4a6f-aece-3ac9aa4bd991"}
 ```
 
 
-## Interaction 16: GET /todos/1505bfee-0ecc-4103-9e03-07392be7904c
+## Interaction 16: GET /todos/9261a618-04e6-4a6f-aece-3ac9aa4bd991
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -727,7 +744,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:01 GMT
+date: Wed, 16 Sep 2020 14:27:20 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -740,7 +757,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"1505bfee-0ecc-4103-9e03-07392be7904c","title":"my todo","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c","url":"https://todo-backend-sinatra.herokuapp.com/todos/1505bfee-0ecc-4103-9e03-07392be7904c"}
+{"uid":"9261a618-04e6-4a6f-aece-3ac9aa4bd991","title":"my todo","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/9261a618-04e6-4a6f-aece-3ac9aa4bd991","url":"https://todo-backend-sinatra.herokuapp.com/todos/9261a618-04e6-4a6f-aece-3ac9aa4bd991"}
 ```
 
 
@@ -751,10 +768,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -772,7 +790,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:03 GMT
+date: Wed, 16 Sep 2020 14:27:20 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -792,10 +810,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -814,11 +833,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:04 GMT
+date: Wed, 16 Sep 2020 14:27:20 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926
+location: https://todo-backend-sinatra.herokuapp.com/todos/658d11ab-fee3-47e9-bcaf-0e3498215f56
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -828,7 +847,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"todo the second","uid":"a6b672d1-98d6-4c9f-a01e-bb7066c2b926","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926","url":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926"}
+{"title":"todo the second","uid":"658d11ab-fee3-47e9-bcaf-0e3498215f56","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/658d11ab-fee3-47e9-bcaf-0e3498215f56","url":"https://todo-backend-sinatra.herokuapp.com/todos/658d11ab-fee3-47e9-bcaf-0e3498215f56"}
 ```
 
 
@@ -838,10 +857,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -860,11 +880,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:04 GMT
+date: Wed, 16 Sep 2020 14:27:20 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6
+location: https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736
 content-length: 278
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -874,7 +894,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"todo the first","uid":"7c4ce266-0314-4515-8a97-b29536c8b9a6","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6","url":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6"}
+{"title":"todo the first","uid":"6e6251f1-67b2-463d-aa83-f8df3ea6c736","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736","url":"https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736"}
 ```
 
 
@@ -884,10 +904,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -905,7 +926,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:05 GMT
+date: Wed, 16 Sep 2020 14:27:20 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -918,20 +939,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"a6b672d1-98d6-4c9f-a01e-bb7066c2b926","title":"todo the second","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926","url":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926"},{"uid":"7c4ce266-0314-4515-8a97-b29536c8b9a6","title":"todo the first","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6","url":"https://todo-backend-sinatra.herokuapp.com/todos/7c4ce266-0314-4515-8a97-b29536c8b9a6"}]
+[{"uid":"6e6251f1-67b2-463d-aa83-f8df3ea6c736","title":"todo the first","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736","url":"https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736"},{"uid":"658d11ab-fee3-47e9-bcaf-0e3498215f56","title":"todo the second","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/658d11ab-fee3-47e9-bcaf-0e3498215f56","url":"https://todo-backend-sinatra.herokuapp.com/todos/658d11ab-fee3-47e9-bcaf-0e3498215f56"}]
 ```
 
 
-## Interaction 21: GET /todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926
+## Interaction 21: GET /todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -949,11 +971,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:07 GMT
+date: Wed, 16 Sep 2020 14:27:21 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-content-length: 289
+content-length: 288
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
 x-frame-options: SAMEORIGIN
@@ -962,7 +984,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"a6b672d1-98d6-4c9f-a01e-bb7066c2b926","title":"todo the second","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926","url":"https://todo-backend-sinatra.herokuapp.com/todos/a6b672d1-98d6-4c9f-a01e-bb7066c2b926"}
+{"uid":"6e6251f1-67b2-463d-aa83-f8df3ea6c736","title":"todo the first","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736","url":"https://todo-backend-sinatra.herokuapp.com/todos/6e6251f1-67b2-463d-aa83-f8df3ea6c736"}
 ```
 
 
@@ -973,10 +995,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -994,7 +1017,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:08 GMT
+date: Wed, 16 Sep 2020 14:27:21 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1014,10 +1037,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1036,11 +1060,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:09 GMT
+date: Wed, 16 Sep 2020 14:27:22 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb
+location: https://todo-backend-sinatra.herokuapp.com/todos/25a08ef2-5aff-49ed-a03a-936b84e21ad5
 content-length: 277
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1050,20 +1074,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"initial title","uid":"55ea1bc3-d428-44f7-8b07-c63e26d144eb","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb","url":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb"}
+{"title":"initial title","uid":"25a08ef2-5aff-49ed-a03a-936b84e21ad5","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/25a08ef2-5aff-49ed-a03a-936b84e21ad5","url":"https://todo-backend-sinatra.herokuapp.com/todos/25a08ef2-5aff-49ed-a03a-936b84e21ad5"}
 ```
 
 
-## Interaction 24: PATCH /todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb
+## Interaction 24: PATCH /todos/25a08ef2-5aff-49ed-a03a-936b84e21ad5
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1082,7 +1107,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:10 GMT
+date: Wed, 16 Sep 2020 14:27:22 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1095,7 +1120,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"55ea1bc3-d428-44f7-8b07-c63e26d144eb","title":"bathe the cat","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb","url":"https://todo-backend-sinatra.herokuapp.com/todos/55ea1bc3-d428-44f7-8b07-c63e26d144eb"}
+{"uid":"25a08ef2-5aff-49ed-a03a-936b84e21ad5","title":"bathe the cat","order":0,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/25a08ef2-5aff-49ed-a03a-936b84e21ad5","url":"https://todo-backend-sinatra.herokuapp.com/todos/25a08ef2-5aff-49ed-a03a-936b84e21ad5"}
 ```
 
 
@@ -1106,10 +1131,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1127,7 +1153,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:12 GMT
+date: Wed, 16 Sep 2020 14:27:23 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1147,10 +1173,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1169,11 +1196,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:13 GMT
+date: Wed, 16 Sep 2020 14:27:24 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a
+location: https://todo-backend-sinatra.herokuapp.com/todos/e849a7db-2f05-424c-941f-060fdb289394
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1183,20 +1210,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"5b87b8c7-b10c-4513-abef-3ccf425b774a","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a","url":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a"}
+{"title":"blah","uid":"e849a7db-2f05-424c-941f-060fdb289394","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/e849a7db-2f05-424c-941f-060fdb289394","url":"https://todo-backend-sinatra.herokuapp.com/todos/e849a7db-2f05-424c-941f-060fdb289394"}
 ```
 
 
-## Interaction 27: PATCH /todos/5b87b8c7-b10c-4513-abef-3ccf425b774a
+## Interaction 27: PATCH /todos/e849a7db-2f05-424c-941f-060fdb289394
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1215,7 +1243,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:14 GMT
+date: Wed, 16 Sep 2020 14:27:24 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1228,7 +1256,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"5b87b8c7-b10c-4513-abef-3ccf425b774a","title":"blah","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a","url":"https://todo-backend-sinatra.herokuapp.com/todos/5b87b8c7-b10c-4513-abef-3ccf425b774a"}
+{"uid":"e849a7db-2f05-424c-941f-060fdb289394","title":"blah","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/e849a7db-2f05-424c-941f-060fdb289394","url":"https://todo-backend-sinatra.herokuapp.com/todos/e849a7db-2f05-424c-941f-060fdb289394"}
 ```
 
 
@@ -1239,10 +1267,11 @@ x-frame-options: SAMEORIGIN
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1260,7 +1289,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:16 GMT
+date: Wed, 16 Sep 2020 14:27:24 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1280,10 +1309,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1302,11 +1332,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:17 GMT
+date: Wed, 16 Sep 2020 14:27:25 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3
+location: https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1316,20 +1346,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}
+{"title":"blah","uid":"c9363ec9-0502-435d-89c8-63ed5cd560e9","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9","url":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9"}
 ```
 
 
-## Interaction 30: PATCH /todos/777631a2-e67f-45f9-89f0-803d67bb4fc3
+## Interaction 30: PATCH /todos/c9363ec9-0502-435d-89c8-63ed5cd560e9
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1348,7 +1379,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:18 GMT
+date: Wed, 16 Sep 2020 14:27:25 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1361,7 +1392,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}
+{"uid":"c9363ec9-0502-435d-89c8-63ed5cd560e9","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9","url":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9"}
 ```
 
 
@@ -1371,10 +1402,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1392,51 +1424,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:19 GMT
-connection: close
-content-type: text/html;charset=utf-8
-access-control-allow-origin: *
-content-length: 286
-x-xss-protection: 1; mode=block
-x-content-type-options: nosniff
-x-frame-options: SAMEORIGIN
-```
-
-### Response body recorded for playback (200: text/html;charset=utf-8):
-
-```
-{"uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}
-```
-
-
-## Interaction 32: GET /todos
-### Request headers recorded for playback:
-
-```
-accept-language: en-US,en;q=0.9
-accept-encoding: gzip, deflate, br
-sec-fetch-dest: empty
-sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
-content-type: application/json
-user-agent: Chrome under Selenium control
-accept: text/plain, */*; q=0.01
-fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
-connection: close
-host: todo-backend-sinatra.herokuapp.com
-```
-
-### Request body recorded for playback ():
-
-```
-{"title":"changed title","completed":true}
-```
-
-### Response headers recorded for playback:
-
-```
-date: Wed, 16 Sep 2020 10:31:19 GMT
+date: Wed, 16 Sep 2020 14:27:25 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1449,21 +1437,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-[{"uid":"777631a2-e67f-45f9-89f0-803d67bb4fc3","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3","url":"https://todo-backend-sinatra.herokuapp.com/todos/777631a2-e67f-45f9-89f0-803d67bb4fc3"}]
+[{"uid":"c9363ec9-0502-435d-89c8-63ed5cd560e9","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9","url":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9"}]
 ```
 
 
-## Interaction 33: DELETE /todos
+## Interaction 32: GET /todos
 ### Request headers recorded for playback:
 
 ```
-content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1481,7 +1469,53 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:20 GMT
+date: Wed, 16 Sep 2020 14:27:25 GMT
+connection: close
+content-type: text/html;charset=utf-8
+access-control-allow-origin: *
+content-length: 286
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+x-frame-options: SAMEORIGIN
+```
+
+### Response body recorded for playback (200: text/html;charset=utf-8):
+
+```
+{"uid":"c9363ec9-0502-435d-89c8-63ed5cd560e9","title":"changed title","order":0,"completed":true,"href":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9","url":"https://todo-backend-sinatra.herokuapp.com/todos/c9363ec9-0502-435d-89c8-63ed5cd560e9"}
+```
+
+
+## Interaction 33: DELETE /todos
+### Request headers recorded for playback:
+
+```
+content-length: 0
+accept-language: en-US,en;q=0.9
+accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: same-site
+origin: http://localhost:8000
+content-type: application/json
+user-agent: Chrome under Selenium control
+accept: text/plain, */*; q=0.01
+fulltitle: Todo-Backend API residing at http://todo-backend-sinatra.herokuapp.com/todos working with an existing todo changes to a todo are persisted and show up when re-fetching the todo
+connection: close
+host: todo-backend-sinatra.herokuapp.com
+```
+
+### Request body recorded for playback ():
+
+```
+{"title":"changed title","completed":true}
+```
+
+### Response headers recorded for playback:
+
+```
+date: Wed, 16 Sep 2020 14:27:26 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1501,10 +1535,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1523,11 +1558,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:21 GMT
+date: Wed, 16 Sep 2020 14:27:26 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d
+location: https://todo-backend-sinatra.herokuapp.com/todos/854e07e8-84dd-496e-ac86-b9636224a643
 content-length: 268
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1537,21 +1572,22 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","uid":"ed1ee011-a4ca-4b1d-9691-aa439b41495d","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d","url":"https://todo-backend-sinatra.herokuapp.com/todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d"}
+{"title":"blah","uid":"854e07e8-84dd-496e-ac86-b9636224a643","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/854e07e8-84dd-496e-ac86-b9636224a643","url":"https://todo-backend-sinatra.herokuapp.com/todos/854e07e8-84dd-496e-ac86-b9636224a643"}
 ```
 
 
-## Interaction 35: DELETE /todos/ed1ee011-a4ca-4b1d-9691-aa439b41495d
+## Interaction 35: DELETE /todos/854e07e8-84dd-496e-ac86-b9636224a643
 ### Request headers recorded for playback:
 
 ```
 content-length: 0
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1569,7 +1605,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:22 GMT
+date: Wed, 16 Sep 2020 14:27:27 GMT
 content-length: 0
 connection: close
 access-control-allow-origin: *
@@ -1589,10 +1625,11 @@ x-content-type-options: nosniff
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1610,7 +1647,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:23 GMT
+date: Wed, 16 Sep 2020 14:27:27 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1633,10 +1670,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1655,11 +1693,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:25 GMT
+date: Wed, 16 Sep 2020 14:27:28 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/4c7dba4a-792b-4670-a030-15b506fae3dc
+location: https://todo-backend-sinatra.herokuapp.com/todos/75332e78-f6c3-4bdc-9ba4-a7b8aaaf4ed7
 content-length: 280
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1669,7 +1707,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"title":"blah","order":523,"uid":"4c7dba4a-792b-4670-a030-15b506fae3dc","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/4c7dba4a-792b-4670-a030-15b506fae3dc","url":"https://todo-backend-sinatra.herokuapp.com/todos/4c7dba4a-792b-4670-a030-15b506fae3dc"}
+{"title":"blah","order":523,"uid":"75332e78-f6c3-4bdc-9ba4-a7b8aaaf4ed7","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/75332e78-f6c3-4bdc-9ba4-a7b8aaaf4ed7","url":"https://todo-backend-sinatra.herokuapp.com/todos/75332e78-f6c3-4bdc-9ba4-a7b8aaaf4ed7"}
 ```
 
 
@@ -1679,10 +1717,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1701,11 +1740,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:25 GMT
+date: Wed, 16 Sep 2020 14:27:28 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b
+location: https://todo-backend-sinatra.herokuapp.com/todos/b764a7cf-5ca1-45c9-a073-f102a3508a00
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1715,20 +1754,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"order":10,"title":"blah","uid":"7191468f-6edb-498e-b950-aa5fa5e3eb1b","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b","url":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b"}
+{"order":10,"title":"blah","uid":"b764a7cf-5ca1-45c9-a073-f102a3508a00","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/b764a7cf-5ca1-45c9-a073-f102a3508a00","url":"https://todo-backend-sinatra.herokuapp.com/todos/b764a7cf-5ca1-45c9-a073-f102a3508a00"}
 ```
 
 
-## Interaction 39: PATCH /todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b
+## Interaction 39: PATCH /todos/b764a7cf-5ca1-45c9-a073-f102a3508a00
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1747,7 +1787,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:26 GMT
+date: Wed, 16 Sep 2020 14:27:29 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1760,7 +1800,7 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"7191468f-6edb-498e-b950-aa5fa5e3eb1b","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b","url":"https://todo-backend-sinatra.herokuapp.com/todos/7191468f-6edb-498e-b950-aa5fa5e3eb1b"}
+{"uid":"b764a7cf-5ca1-45c9-a073-f102a3508a00","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/b764a7cf-5ca1-45c9-a073-f102a3508a00","url":"https://todo-backend-sinatra.herokuapp.com/todos/b764a7cf-5ca1-45c9-a073-f102a3508a00"}
 ```
 
 
@@ -1770,10 +1810,11 @@ x-frame-options: SAMEORIGIN
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1792,11 +1833,11 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:28 GMT
+date: Wed, 16 Sep 2020 14:27:29 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
-location: https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d
+location: https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a
 content-length: 279
 x-xss-protection: 1; mode=block
 x-content-type-options: nosniff
@@ -1806,20 +1847,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (201: text/html;charset=utf-8):
 
 ```
-{"order":10,"title":"blah","uid":"816177eb-71ef-4eb4-a0c2-9041b426ee6d","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d","url":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d"}
+{"order":10,"title":"blah","uid":"14d77b53-875e-4521-b9cb-0fa847526e3a","completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a","url":"https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a"}
 ```
 
 
-## Interaction 41: PATCH /todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d
+## Interaction 41: PATCH /todos/14d77b53-875e-4521-b9cb-0fa847526e3a
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1838,7 +1880,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:29 GMT
+date: Wed, 16 Sep 2020 14:27:29 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1851,20 +1893,21 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"816177eb-71ef-4eb4-a0c2-9041b426ee6d","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d","url":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d"}
+{"uid":"14d77b53-875e-4521-b9cb-0fa847526e3a","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a","url":"https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a"}
 ```
 
 
-## Interaction 42: GET /todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d
+## Interaction 42: GET /todos/14d77b53-875e-4521-b9cb-0fa847526e3a
 ### Request headers recorded for playback:
 
 ```
 accept-language: en-US,en;q=0.9
 accept-encoding: gzip, deflate, br
+referer: http://localhost:8000/index.html?http://todo-backend-sinatra.herokuapp.com/todos
 sec-fetch-dest: empty
 sec-fetch-mode: cors
-sec-fetch-site: cross-site
-origin: https://servirtium.github.io
+sec-fetch-site: same-site
+origin: http://localhost:8000
 content-type: application/json
 user-agent: Chrome under Selenium control
 accept: text/plain, */*; q=0.01
@@ -1882,7 +1925,7 @@ host: todo-backend-sinatra.herokuapp.com
 ### Response headers recorded for playback:
 
 ```
-date: Wed, 16 Sep 2020 10:31:30 GMT
+date: Wed, 16 Sep 2020 14:27:30 GMT
 connection: close
 content-type: text/html;charset=utf-8
 access-control-allow-origin: *
@@ -1895,5 +1938,5 @@ x-frame-options: SAMEORIGIN
 ### Response body recorded for playback (200: text/html;charset=utf-8):
 
 ```
-{"uid":"816177eb-71ef-4eb4-a0c2-9041b426ee6d","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d","url":"https://todo-backend-sinatra.herokuapp.com/todos/816177eb-71ef-4eb4-a0c2-9041b426ee6d"}
+{"uid":"14d77b53-875e-4521-b9cb-0fa847526e3a","title":"blah","order":95,"completed":false,"href":"https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a","url":"https://todo-backend-sinatra.herokuapp.com/todos/14d77b53-875e-4521-b9cb-0fa847526e3a"}
 ```

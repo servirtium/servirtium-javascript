@@ -10,6 +10,7 @@ import subprocess
 import time
 
 node_process = None
+todoSuiteUrl = "https://servirtium.github.io/compatibility-suite/index.html"
 
 if len(sys.argv) > 1:
    if sys.argv[1] == "record":
@@ -29,30 +30,20 @@ else:
    print("record/playback/direct argument needed")
    exit(10)
 
+if len(sys.argv) > 2:
+   if sys.argv[2] == "local":
+       todoSuiteUrl = "http://localhost:8000/index.html"
+
 driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 
 time.sleep(5)
 
-driver.get("https://servirtium.github.io/compatibility-suite/index.html?" + url + "/todos")
+driver.get(todoSuiteUrl + "?" + url + "/todos")
 try:
     element = WebDriverWait(driver, 300).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
     )
     print("Compatibility suite: all 16 tests passed")
-
-    if sys.argv[1] == "record":
-
-        print("generate replacements script")
-        with open("./compatibility_suite_mock_replacements.sh", "w") as myfile:
-            myfile.write("cat mocks/todobackend_test_suite.md | sed 's#https:\/\/todo-backend-sinatra\.herokuapp\.com#http://localhost:61417#g' | sed 's#todo-backend-sinatra\.herokuapp\.com#localhost:61417#g' | sed 's#user-agent: .*#user-agent: Servirtium-Testing#' | sed '/^via: /d' | sed '/^server: /d' | ")
-        process = subprocess.Popen(["bash", "./compatibility_suite_make_mock_replacements.sh"], stdout=subprocess.PIPE)
-        output, error = process.communicate()
-        with open("./compatibility_suite_mock_replacements.sh", "a") as myfile:
-            myfile.write(" cat > mocks/todobackend_test_suite_with_replacements.md")
-
-        print("execute replacements script")
-        process = subprocess.Popen(["bash", "./compatibility_suite_mock_replacements.sh"], stdout=subprocess.PIPE)
-        output, error = process.communicate()
 
 except TimeoutException as ex:
     print("Compatibility suite: did not finish with 16 passes. See open browser frame.")
