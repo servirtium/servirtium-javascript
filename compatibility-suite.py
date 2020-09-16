@@ -22,6 +22,7 @@ if len(sys.argv) > 1:
        node_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "playback"])
    elif sys.argv[1] == "direct":
        print("showing reference Sinatra app online without Servirtium in the middle")
+       todoSuiteUrl = "https://www.todobackend.com/specs/index.html"
        url = "https://todo-backend-sinatra.herokuapp.com"
    else:
        print("Second arg should be record or playback")
@@ -32,11 +33,12 @@ else:
 
 if len(sys.argv) > 2:
    if sys.argv[2] == "local":
+       # Running via 'python -m SimpleHTTPServer 8000' in a different shell
        todoSuiteUrl = "http://localhost:8000/index.html"
 
 driver = webdriver.Chrome("/usr/local/bin/chromedriver")
 
-time.sleep(5)
+time.sleep(5) # for old workstations
 
 driver.get(todoSuiteUrl + "?" + url + "/todos")
 try:
@@ -51,14 +53,6 @@ except TimeoutException as ex:
 # TODO warn that node process was not started.
 
 print("mode: " + sys.argv[1])
-
-# if sys.argv[1] == "record":
-    # print("Renaming markdown recording...")
-    # TODO Can't get new md file to overwrite the old :-( :-( :-(
-    #      Not using os.rename() or shutils.move()
-    # process = subprocess.Popen("mv mocks/todobackend_test_suite_with_replacements.md mocks/todobackend_test_suite.md".split(), stdout=subprocess.PIPE)
-    # output, error = process.communicate()
-    # print(".. Renamed markdown recording.")
 
 if node_process is not None:
     print("Killing Node")
