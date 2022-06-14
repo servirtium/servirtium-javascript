@@ -57,7 +57,9 @@ describe('climateAPI record', () => {
   })
 })
 ```
+
 ## For Playback mode test example:
+
 ```
 describe('climateAPI playback', () => {
   let climateApiClient: IClimateAPI
@@ -90,7 +92,9 @@ describe('climateAPI playback', () => {
   })
 })
 ```
+
 ## For direct mode test example:
+
 ```
 describe('climateAPI direct', () => {
   let climateApiClient: IClimateAPI
@@ -108,4 +112,10 @@ describe('climateAPI direct', () => {
     }
   })
 })
+```
+
+# Building/testing
+
+```
+npm test
 ```
