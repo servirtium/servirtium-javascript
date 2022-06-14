@@ -1,19 +1,30 @@
 # servirtium-javascript
-A javascript implementation of Servirtium, a library that helps test interactions with APIs.
+
+A javascript implementation of Servirtium, a library that helps test interactions with Web APIs.
 
 # How it works
-Servirtium is a server that serves as a man-in-the-middle: it processes incoming requests, forwards them to a destination API and writes the response into a Markdown file with a special format that is common across all of the implementations of the library. Later these Markdown files are used to replay the interactions that were recorded before, allowing to test interactions without making real API calls.
+
+Servirtium is a server that serves as a man-in-the-middle for HTTP conversations: in record mode, it processes incoming requests, forwards them to a 
+destination API and also writes the response into a markdown file with a special format that is common across all the 
+implementations of the library. Later, these markdown files are used to replay the previously-recorded interactions, allowing test automation 
+to use those interactions without making real API calls which is far faster.
+
+See also a minimal demo project/repo: https://github.com/servirtium/demo-javascript-climate-tck
 
 # Prerequisites
+
 You can install by
+
 ```
 npm install @servirtium/recorder
 ```
 
 # Usage
+
 You can use one of these attribute on test function to start the Servirtium server and config it to serve request in records and playback mode
 
 ## For record mode test example:
+
 ```
 describe('climateAPI record', () => {
   let climateApiClient: IClimateAPI
