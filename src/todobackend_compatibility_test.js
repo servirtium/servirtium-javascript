@@ -6,21 +6,26 @@ const run = async() => {
 
     let servirtium
 
+    let realUrl = myArgs[1]
+    let realDomain = myArgs[1].replace("https://", "")
+        .replace("http://", "")
+
     switch (myArgs[0]) {
+
       case 'record':
-        servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
+        servirtium = new Servirtium(realUrl)
         servirtium.setTestName("todobackend_test_suite")
         servirtium.setCallerRequestHeaderReplacements({
-          "http://localhost:61417": "https://todo-backend-sinatra.herokuapp.com",
-          "localhost:61417": "todo-backend-sinatra.herokuapp.com"
+          "http://localhost:61417": realUrl,
+          "localhost:61417": realDomain
         })
         servirtium.setCallerResponseHeaderReplacements({
-          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+          realUrl: "http://localhost:61417",
+          realDomain: "localhost:61417"
         })
         servirtium.setCallerResponseBodyReplacement({
-          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417",
+          realUrl: "http://localhost:61417",
+          realDomain: "localhost:61417",
           "https": "http",
         })
         servirtium.setRecordResponseHeadersRemoval(["via", "server"])
@@ -34,19 +39,19 @@ const run = async() => {
         })
         break;
       case 'playback':
-        servirtium = new Servirtium('https://todo-backend-sinatra.herokuapp.com')
+        servirtium = new Servirtium(realUrl)
         servirtium.setTestName("todobackend_test_suite")
         servirtium.setCallerRequestHeaderReplacements({
-          "http://localhost:61417": "https://todo-backend-sinatra.herokuapp.com",
-          "localhost:61417": "todo-backend-sinatra.herokuapp.com"
+          "http://localhost:61417": realUrl,
+          "localhost:61417": realDomain
         })
         servirtium.setCallerResponseHeaderReplacements({
-          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417"
+          realUrl: "http://localhost:61417",
+          realDomain: "localhost:61417"
         })
         servirtium.setCallerResponseBodyReplacement({
-          "https://todo-backend-sinatra.herokuapp.com": "http://localhost:61417",
-          "todo-backend-sinatra.herokuapp.com": "localhost:61417",
+          realUrl: "http://localhost:61417",
+          realDomain: "localhost:61417",
           "https": "http",
         })
 

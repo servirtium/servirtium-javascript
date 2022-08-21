@@ -9,21 +9,25 @@ from selenium.webdriver.support import expected_conditions as EC
 import subprocess
 import time
 
-node_process = None
+servirtium_process = None
+
 todoSuiteUrl = "https://servirtium.github.io/compatibility-suite/index.html"
 
 if len(sys.argv) > 1:
+
+   realUrl = "https://http4k-todo-backend.herokuapp.com"
+
    if sys.argv[1] == "record":
        # TODO check that node process is already started.
        url = "http://localhost:61417"
-       node_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "record"])
+       servirtium_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "record", realUrl])
    elif sys.argv[1] == "playback":
        url = "http://localhost:61417"
-       node_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "playback"])
+       servirtium_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "playback", realUrl])
    elif sys.argv[1] == "direct":
-       print("showing reference Sinatra app online without Servirtium in the middle")
+       print("showing Http4k Todobackend implementation online without Servirtium in the middle")
        todoSuiteUrl = "https://www.todobackend.com/specs/index.html"
-       url = "https://todo-backend-sinatra.herokuapp.com"
+       url = realUrl
    else:
        print("Second arg should be record or playback")
        exit(10)
@@ -36,11 +40,12 @@ if len(sys.argv) > 2:
        # Running via 'python -m SimpleHTTPServer 8000' in a different shell
        todoSuiteUrl = "http://localhost:8000/index.html"
 
-driver = webdriver.Chrome("/usr/local/bin/chromedriver")
+driver = webdriver.Chrome("chromedriver")
 
-time.sleep(5) # for old workstations
+print("sleep 5 seconds for older workstations")
+time.sleep(5)
 
-driver.get(todoSuiteUrl + "?" + url + "/todos")
+driver.get(todoSuiteUrl + "?" + url)
 try:
     element = WebDriverWait(driver, 300).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
@@ -54,10 +59,10 @@ except TimeoutException as ex:
 
 print("mode: " + sys.argv[1])
 
-if node_process is not None:
-    print("Killing Node")
-    os.killpg(os.getpgid(node_process.pid), signal.SIGTERM)
-    node_process.kill()
+if servirtium_process is not None:
+    print("Killing servirtium process")
+    os.killpg(os.getpgid(servirtium_process.pid), signal.SIGTERM)
+    servirtium_process.kill()
 
 print("Closing Selenium")
 driver.quit()
