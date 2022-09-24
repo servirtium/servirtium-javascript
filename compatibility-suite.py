@@ -8,6 +8,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 import subprocess
 import time
+import docker
 
 servirtium_process = None
 
@@ -16,11 +17,28 @@ servirtium_process = None
 # Playback and Record mode use ours. Direct mode uses Pete's original.
 todoSuiteUrl = "https://servirtium.github.io/compatibility-suite/index.html"
 
-# We used to use the Ruby Sinatra version of the Todobackend, but it is not
-# up as often as the http4k version is
-realUrl = "https://http4k-todo-backend.herokuapp.com"
+
+# We used to use the Ruby-Sinatra version of the Todobackend, but it is not
+# up as often as the http4k version, but both are unavailable as Heroku changed
+# their free model.
+# realUrl = "https://todo-backend-sinatra.herokuapp.com"
+# realUrl = "https://http4k-todo-backend.herokuapp.com"
+# So se use our own version of http4k-todo-backend via Docker:
+realUrl = "http://http4k-todo-backend.local.gd:54321"
+
+dkrCtr = None
 
 if len(sys.argv) > 1:
+
+   try:
+       if sys.argv[1] == "record" or sys.argv[1] == "direct":
+
+           dkr = docker.from_env()
+           dkrCtr = dkr.containers.run("todobackend-api-for-servirtium-development", ports={'8000/tcp': 54321}, detach=True)
+   except BaseException as err:
+       if "port is already allocated" in str(err):
+           print("docker ps - then kill the todobackend-api-for-servirtium-development already running")
+           exit(10)
 
    if sys.argv[1] == "record":
        # TODO check that node process is already started.
@@ -31,7 +49,7 @@ if len(sys.argv) > 1:
        servirtium_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "playback", realUrl])
    elif sys.argv[1] == "direct":
        print("showing Http4k Todobackend implementation online without Servirtium in the middle")
-       todoSuiteUrl = "https://www.todobackend.com/specs/index.html"
+       todoSuiteUrl = "http://www.todobackend.com/specs/index.html"
        url = realUrl
    else:
        print("Second arg should be record or playback")
@@ -68,6 +86,10 @@ if servirtium_process is not None:
     print("Killing servirtium process")
     os.killpg(os.getpgid(servirtium_process.pid), signal.SIGTERM)
     servirtium_process.kill()
+
+if dkrCtr is not None:
+    print("Killing Locally launched Todo-backend")
+    dkrCtr.stop()
 
 print("Closing Selenium")
 driver.quit()
