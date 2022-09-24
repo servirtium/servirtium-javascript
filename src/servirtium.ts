@@ -5,6 +5,7 @@ import fs from 'fs'
 import http from 'http'
 import ejs from 'ejs'
 import {createProxyMiddleware, Options} from 'http-proxy-middleware'
+import * as Console from "console";
 
 export type RegexReplacement = {[regex: string]: string}
 
@@ -210,7 +211,7 @@ export class Servirtium {
       const recordBody = this._replaceContent(callerBody, this.recordRequestBodyReplacement)
       this.recordRequestBody = recordBody
       // Forward request
-      proxyReq.write(callerBody)
+      proxyReq.write(callerBody)git
     }
   }
 
@@ -240,6 +241,7 @@ export class Servirtium {
     proxyRes.on('end', async () => {
       let content = Buffer.concat(body).toString()
       const finalContent = this._replaceContent(content, this.recordResponseBodyReplacement)
+      Console.log(">>>> finalContent2 > " + finalContent + "<<<<")
       this.recordResponseBody = finalContent
       await this._generateTemplate()
       response.status(proxyRes.statusCode)

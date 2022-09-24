@@ -1,4 +1,5 @@
 const { Servirtium } = require('../dist')
+const Console = require("console");
 
 const run = async() => {
   try {
@@ -7,8 +8,11 @@ const run = async() => {
     let servirtium
 
     let realUrl = myArgs[1]
-    let realDomain = myArgs[1].replace("https://", "")
+    let realDomainAndPort = myArgs[1].replace("https://", "")
         .replace("http://", "")
+
+    Console.log("realUrl=" + realUrl);
+    Console.log("realDomainAndPort=" + realDomainAndPort);
 
     switch (myArgs[0]) {
 
@@ -17,7 +21,7 @@ const run = async() => {
         servirtium.setTestName("todobackend_test_suite")
         servirtium.setCallerRequestHeaderReplacements({
           "http://localhost:61417": realUrl,
-          "localhost:61417": realDomain
+          "localhost:61417": realDomainAndPort
         })
         servirtium.setCallerResponseHeaderReplacements({
           realUrl: "http://localhost:61417",
@@ -43,7 +47,7 @@ const run = async() => {
         servirtium.setTestName("todobackend_test_suite")
         servirtium.setCallerRequestHeaderReplacements({
           "http://localhost:61417": realUrl,
-          "localhost:61417": realDomain
+          "localhost:61417": realDomainAndPort
         })
         servirtium.setCallerResponseHeaderReplacements({
           realUrl: "http://localhost:61417",
