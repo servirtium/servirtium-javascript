@@ -29,6 +29,7 @@ todoSuiteUrl = "https://servirtium.github.io/compatibility-suite/index.html"
 # So we use our own version of http4k-todo-backend via Docker.
 #  See https://github.com/servirtium/todobackend-for-compatibility-kit for _build_ instructions
 realUrl = "http://localhost:54321"
+extraURL = ""
 
 docker_stopped = False
 servirtium_stopped = False
@@ -81,7 +82,7 @@ if len(sys.argv) > 1:
         servirtium_process = subprocess.Popen(["node", "src/todobackend_compatibility_test.js", "playback", realUrl], stderr=subprocess.STDOUT, stdout=subprocess.PIPE)
     elif sys.argv[1] == "direct":
         print("showing Http4k Todobackend implementation online without Servirtium in the middle")
-        todoSuiteUrl = "http://www.todobackend.com/specs/index.html"
+        extraURL = "&noServirtium"
         url = realUrl
     else:
         print("Second arg should be record or playback")
@@ -100,7 +101,7 @@ driver = webdriver.Chrome("chromedriver")
 print("sleep 5 seconds for older workstations")
 time.sleep(5)
 
-driver.get(todoSuiteUrl + "?" + url)
+driver.get(todoSuiteUrl + "?" + url + extraURL)
 try:
     element = WebDriverWait(driver, 300).until(
         EC.text_to_be_present_in_element((By.CLASS_NAME, "passes"), "16")
