@@ -1,5 +1,4 @@
 import express from 'express'
-import cors from 'cors'
 import path from 'path'
 import fs from 'fs'
 import http from 'http'
@@ -149,7 +148,6 @@ export class Servirtium {
 
   public startPlayback = (callback?: (...args: any[]) => void, port: number = 61417) => {
     const app = express()
-    app.use(cors({ origin: true }))
     app.use(this._playbackHandler)
     this.serverPlayback = app.listen(port, callback)
     console.log("Servirtium playback starting on port " + port)
@@ -274,7 +272,6 @@ export class Servirtium {
 
   public startRecord  = (callback?: (err?: Error) => void, port: number = 61417) => {
     const app = express()
-    app.use(cors({ origin: true }))
     app.use((req, res, next) => {
       let body = []
       req.on('data', (chunk) => {
