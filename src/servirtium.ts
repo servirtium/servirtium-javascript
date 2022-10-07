@@ -209,7 +209,7 @@ export class Servirtium {
       const recordBody = this._replaceContent(callerBody, this.recordRequestBodyReplacement)
       this.recordRequestBody = recordBody
       // Forward request
-      proxyReq.write(callerBody)git
+      proxyReq.write(callerBody)
     }
   }
 
