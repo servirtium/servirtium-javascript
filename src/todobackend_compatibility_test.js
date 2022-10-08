@@ -11,8 +11,8 @@ const run = async() => {
     let realDomainAndPort = myArgs[1].replace("https://", "")
         .replace("http://", "")
 
-    Console.log("realUrl=" + realUrl);
-    Console.log("realDomainAndPort=" + realDomainAndPort);
+    console.log("realUrl=" + realUrl);
+    console.log("realDomainAndPort=" + realDomainAndPort);
 
     switch (myArgs[0]) {
 
@@ -24,12 +24,12 @@ const run = async() => {
           "localhost:61417": realDomainAndPort
         })
         servirtium.setCallerResponseHeaderReplacements({
-          realUrl: "http://localhost:61417",
-          realDomain: "localhost:61417"
+          [realUrl]: "http://localhost:61417",
+          [realDomainAndPort]: "localhost:61417"
         })
         servirtium.setCallerResponseBodyReplacement({
-          realUrl: "http://localhost:61417",
-          realDomain: "localhost:61417",
+          [realUrl]: "http://localhost:61417",
+          [realDomainAndPort]: "localhost:61417",
           "https": "http",
         })
         servirtium.setRecordResponseHeadersRemoval(["via", "server"])
@@ -50,12 +50,12 @@ const run = async() => {
           "localhost:61417": realDomainAndPort
         })
         servirtium.setCallerResponseHeaderReplacements({
-          realUrl: "http://localhost:61417",
-          realDomain: "localhost:61417"
+          [realUrl]: "http://localhost:61417",
+          [realDomainAndPort]: "localhost:61417"
         })
         servirtium.setCallerResponseBodyReplacement({
-          realUrl: "http://localhost:61417",
-          realDomain: "localhost:61417",
+          [realUrl]: "http://localhost:61417",
+          [realDomainAndPort]: "localhost:61417",
           "https": "http",
         })
 

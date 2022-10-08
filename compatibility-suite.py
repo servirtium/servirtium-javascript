@@ -25,7 +25,7 @@ todoSuiteUrl = "https://servirtium.github.io/compatibility-suite/index.html"
 # up as often as the http4k version, but both are unavailable as Heroku changed
 # their free model.
 # realUrl = "https://todo-backend-sinatra.herokuapp.com"
-realUrl = "http://todo-backend-rocket-rust.herokuapp.com"
+realUrl = "https://todo-backend-rocket-rust.herokuapp.com"
 # So we use our own version of http4k-todo-backend via Docker.
 #  See https://github.com/servirtium/todobackend-for-compatibility-kit for _build_ instructions
 # realUrl = "http://localhost:54321"

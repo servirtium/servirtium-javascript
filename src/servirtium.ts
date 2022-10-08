@@ -4,7 +4,7 @@ import fs from 'fs'
 import http from 'http'
 import ejs from 'ejs'
 import {createProxyMiddleware, Options} from 'http-proxy-middleware'
-import * as Console from "console";
+import cors from 'cors'
 
 export type RegexReplacement = {[regex: string]: string}
 
@@ -148,6 +148,7 @@ export class Servirtium {
 
   public startPlayback = (callback?: (...args: any[]) => void, port: number = 61417) => {
     const app = express()
+    app.use(cors())
     app.use(this._playbackHandler)
     this.serverPlayback = app.listen(port, callback)
     console.log("Servirtium playback starting on port " + port)
@@ -239,7 +240,6 @@ export class Servirtium {
     proxyRes.on('end', async () => {
       let content = Buffer.concat(body).toString()
       const finalContent = this._replaceContent(content, this.recordResponseBodyReplacement)
-      Console.log(">>>> finalContent2 > " + finalContent + "<<<<")
       this.recordResponseBody = finalContent
       await this._generateTemplate()
       response.status(proxyRes.statusCode)
@@ -272,6 +272,7 @@ export class Servirtium {
 
   public startRecord  = (callback?: (err?: Error) => void, port: number = 61417) => {
     const app = express()
+    app.use(cors())
     app.use((req, res, next) => {
       let body = []
       req.on('data', (chunk) => {
@@ -341,9 +342,6 @@ export class Servirtium {
   }
 
   private _parseHeaders = (content: string): http.IncomingHttpHeaders => {
-    if (content.includes("```")) {
-      //console.log("headers>>>>" + content + "<<<<<<<")
-    }
     let headers = {}
     const headersContents = content.split('\n')
     headersContents?.forEach((item: string) => {
