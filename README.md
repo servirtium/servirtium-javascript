@@ -9,7 +9,7 @@ destination API and also writes the response into a markdown file with a special
 implementations of the library. Later, these markdown files are used to replay the previously-recorded interactions, allowing test automation 
 to use those interactions without making real API calls which is far faster.
 
-![](https://user-images.githubusercontent.com/82182/195794632-7aaa75f0-6c42-4761-9177-7c52ce6ea98f.png)
+![](https://user-images.githubusercontent.com/82182/195795116-2dad0464-82d1-4651-999b-5ba5cd5351df.png)
 
 See also a minimal demo project/repo: https://github.com/servirtium/demo-javascript-climate-tck
 
