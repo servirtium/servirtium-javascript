@@ -29,6 +29,7 @@ export interface IServirtium {
   setRecordResponseHeaderReplacements(values: RegexReplacement)
   setRecordResponseBodyReplacement(values: RegexReplacement)
   checkMarkdownIsDifferentToPreviousRecording(): Promise<boolean>
+  setPrettyPrint(): void
 }
 
 
@@ -66,6 +67,7 @@ export class Servirtium {
   private recordResponseHeadersRemoval: string[]
   private recordResponseHeaderReplacements: RegexReplacement
   private recordResponseBodyReplacement: RegexReplacement
+  private _prettyPrintBody: boolean;
 
   constructor(apiUrl?: string) {
     this.apiUrl = apiUrl
@@ -267,6 +269,9 @@ export class Servirtium {
   }
 
   private _prettyPrint = (content: string) => {
+    if(!this._prettyPrintBody){
+      return content
+    }
     try {
       return format(content, { lineSeparator: '\n'})
     } catch (e) {
@@ -440,6 +445,10 @@ export class Servirtium {
     } catch(err) {
       return true
     }
+  }
+
+  public setPrettyPrint() {
+    this._prettyPrintBody = true
   }
 }
 

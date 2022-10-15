@@ -18,6 +18,7 @@ const run = async() => {
 
       case 'record':
         servirtium = new Servirtium(realUrl)
+        servirtium.setPrettyPrint()
         servirtium.setTestName("todobackend_test_suite")
         servirtium.setCallerRequestHeaderReplacements({
           "http://localhost:61417": realUrl,
