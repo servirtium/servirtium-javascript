@@ -268,10 +268,10 @@ export class Servirtium {
 
   private _prettyPrint = (content: string) => {
     try {
-      return format(content)
+      return format(content, { lineSeparator: '\n'})
     } catch (e) {
       try {
-        JSON.stringify(content)
+        return JSON.stringify(JSON.parse(content), undefined, 2)
       } catch (e2) {
         //swallow exception because we don't care
         return content
