@@ -5,6 +5,7 @@ import http from 'http'
 import ejs from 'ejs'
 import {createProxyMiddleware, Options} from 'http-proxy-middleware'
 import cors from 'cors'
+import format  from 'xml-formatter'
 
 export type RegexReplacement = {[regex: string]: string}
 
@@ -29,6 +30,7 @@ export interface IServirtium {
   setRecordResponseBodyReplacement(values: RegexReplacement)
   checkMarkdownIsDifferentToPreviousRecording(): Promise<boolean>
 }
+
 
 export class Servirtium {
   private apiUrl: string
@@ -258,9 +260,23 @@ export class Servirtium {
         })
       })
       const callerResponseBody = this._replaceContent(finalContent, this.callerResponseBodyReplacement)
-      const callerResponseBodyBuff = Buffer.from(callerResponseBody)
+      const prettyFinalContent = this._prettyPrint(callerResponseBody);
+      const callerResponseBodyBuff = Buffer.from(prettyFinalContent)
       response.end(callerResponseBodyBuff)
     })
+  }
+
+  private _prettyPrint = (content: string) => {
+    try {
+      return format(content)
+    } catch (e) {
+      try {
+        JSON.stringify(content)
+      } catch (e2) {
+        //swallow exception because we don't care
+        return content
+      }
+    }
   }
 
   private _onError =(err: Error, req: express.Request, res: express.Response) => {

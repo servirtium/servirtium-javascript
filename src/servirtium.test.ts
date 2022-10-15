@@ -1,5 +1,4 @@
 import Servirtium from "./servirtium"
-import fs from 'fs'
 
 describe('Servirtium', () => {
   let servirtium: Servirtium
@@ -87,4 +86,14 @@ describe('Servirtium', () => {
       expect(result).toEqual({body: undefined, headers: {}})
     })
   })
+
+  describe('prettyPrint', () => {
+    it('return pretty xml', () => {
+      const xml = "<this><blah></blah></this>"
+      const result = servirtium['_prettyPrint'](xml)
+      expect(result).toEqual("<this>\r\n    <blah></blah>\r\n</this>")
+    })
+  })
+
+
 })
