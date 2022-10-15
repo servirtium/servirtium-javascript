@@ -2,3 +2,4 @@ node_modules
 .vscode
 dist
 compatibility_suite_mock_replacements.sh
+.idea
