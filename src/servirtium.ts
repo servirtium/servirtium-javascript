@@ -386,11 +386,11 @@ export class Servirtium {
 
     sections.forEach(section => {
       if (section.startsWith("Response headers recorded for playback")) {
-        headers = this._parseHeaders(section.split("```")[1])
+        headers = this._parseHeaders(section.split("\n```\n")[1])
       }
       if (section.startsWith("Response body recorded for playback")) {
         statusCode = +section.split("(")[1].split(": ")[0]
-        let body = section.split("```")[1];
+        let body = section.split("\n```\n")[1];
         responseBody = body.substring(1).trim()
       }
     })
