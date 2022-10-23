@@ -1,5 +1,7 @@
 # servirtium-javascript
 
+[![CD](https://github.com/servirtium/servirtium-javascript/actions/workflows/cd.yaml/badge.svg)](https://github.com/servirtium/servirtium-javascript/actions/workflows/cd.yaml)
+
 A javascript implementation of Servirtium, a library that helps test interactions with Web APIs.
 
 # How it works
