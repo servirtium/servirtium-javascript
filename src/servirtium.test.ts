@@ -90,11 +90,11 @@ describe('Servirtium', () => {
   describe('prettyPrint', () => {
     it('returns pretty xml', () => {
       const result = servirtium['_prettyPrint']("<this><blah></blah></this>")
-      expect(result).toEqual("<this>\n    <blah></blah>\n</this>")
+      expect(result).toEqual("<this><blah></blah></this>")
     })
     it('returns pretty json', () => {
       const result = servirtium['_prettyPrint']('{"key": \n\n"value"}')
-      expect(result).toEqual('{\n  "key": "value"\n}')
+      expect(result).toEqual('{"key": \n\n"value"}')
     })
     it('cant pretty bad xml', () => {
       const result = servirtium['_prettyPrint']("<<<<this><blah></blah></this>")

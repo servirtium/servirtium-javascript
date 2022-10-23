@@ -432,6 +432,9 @@ export class Servirtium {
 
   private _parseHeaders = (content: string): http.IncomingHttpHeaders => {
     let headers = {};
+    if(content == undefined){
+      content = ""
+    }
     const headersContents = content.split("\n");
     headersContents?.forEach((item: string) => {
       const keysAndValues = item?.split(": ");

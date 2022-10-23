@@ -130,5 +130,5 @@ describe('climateAPI direct', () => {
 # Building/testing
 
 ```
-npm test
+yarn test
 ```
