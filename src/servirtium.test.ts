@@ -87,12 +87,6 @@ describe('Servirtium', () => {
     })
   })
 
-  describe('test ci', () => {
-    it('should fail', () => {
-      expect(false).toEqual(true)
-    })
-  })
-
   describe('prettyPrint', () => {
     it('returns pretty xml', () => {
       const result = servirtium['_prettyPrint']("<this><blah></blah></this>")
