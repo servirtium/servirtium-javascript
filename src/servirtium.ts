@@ -1,9 +1,11 @@
+// noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
+
 import express from "express";
 import path from "path";
 import fs from "fs";
 import http from "http";
 import ejs from "ejs";
-import { createProxyMiddleware, Options } from "http-proxy-middleware";
+import {createProxyMiddleware, Options} from "http-proxy-middleware";
 import cors from "cors";
 import format from "xml-formatter";
 
@@ -33,7 +35,7 @@ export interface IServirtium {
 }
 
 export class Servirtium {
-  private apiUrl: string;
+  private readonly apiUrl: string;
   private serverPlayback: http.Server;
   private serverRecord: http.Server;
   private testName: string;
@@ -235,11 +237,10 @@ export class Servirtium {
         this.callerRequestBodyReplacement
       );
       // Assign record body
-      const recordBody = this._replaceContent(
-        callerBody,
-        this.recordRequestBodyReplacement
+      this.recordRequestBody = this._replaceContent(
+          callerBody,
+          this.recordRequestBodyReplacement
       );
-      this.recordRequestBody = recordBody;
       // Forward request
       proxyReq.write(callerBody);
     }
@@ -363,8 +364,7 @@ export class Servirtium {
         body.push(chunk);
       });
       req.on("end", async () => {
-        let content = Buffer.concat(body).toString();
-        req.body = content;
+        req.body = Buffer.concat(body).toString();
         next();
       });
     });
@@ -388,14 +388,14 @@ export class Servirtium {
 
   public writeRecord = async () => {
     const destDir = path.resolve(process.cwd(), "mocks");
-    await fs.mkdirSync(destDir, { recursive: true });
+    fs.mkdirSync(destDir, { recursive: true });
     const fileDir = path.resolve(process.cwd(), "mocks", `${this.testName}.md`);
-    await fs.writeFileSync(fileDir, this.recordContent);
+    fs.writeFileSync(fileDir, this.recordContent);
   };
 
   private _generateTemplate = async () => {
     const templatePath = path.resolve(__dirname, "template.ejs");
-    const ejsTemplate = await fs.readFileSync(templatePath, {
+    const ejsTemplate = fs.readFileSync(templatePath, {
       encoding: "utf8",
     });
     const template = ejs.compile(ejsTemplate, {
@@ -483,7 +483,7 @@ export class Servirtium {
         "mocks",
         `${this.testName}.md`
       );
-      const content = await fs.readFileSync(fileDir, { encoding: "utf8" });
+      const content = fs.readFileSync(fileDir, { encoding: "utf8" });
       const interaction = this._getInteraction(
         content,
         this.interactionSequence
@@ -508,11 +508,10 @@ export class Servirtium {
               headers[headerKey] = line2.split(": ")[1];
             }
 
-            const headerValues = (headers[headerKey] as string).replace(
-              regex,
-              this.callerResponseHeaderReplacements[regexString]
+            headers[headerKey] = (headers[headerKey] as string).replace(
+                regex,
+                this.callerResponseHeaderReplacements[regexString]
             );
-            headers[headerKey] = headerValues;
           });
         }
       );
@@ -541,7 +540,7 @@ export class Servirtium {
           "mocks",
           `${this.testName}.md`
         );
-        const markdownContent = await fs.readFileSync(fileDir, {
+        const markdownContent = fs.readFileSync(fileDir, {
           encoding: "utf8",
         });
         const newContent = this._replaceContent(
