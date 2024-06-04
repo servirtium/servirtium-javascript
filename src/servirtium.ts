@@ -69,9 +69,20 @@ export class Servirtium {
   private recordResponseHeaderReplacements: RegexReplacement;
   private recordResponseBodyReplacement: RegexReplacement;
   private _prettyPrintBody: boolean;
+  private readonly proxyMiddlewareOptions: Options;
 
-  constructor(apiUrl?: string) {
+  constructor(apiUrl?: string, proxyMiddlewareOptions: Options = {}) {
     this.apiUrl = apiUrl;
+    this.proxyMiddlewareOptions = {
+      target: this.apiUrl,
+      changeOrigin: true,
+      selfHandleResponse: true,
+      onProxyReq: this._onProxyReq,
+      onProxyRes: this._onProxyRes,
+      onError: this._onError,
+      ...proxyMiddlewareOptions
+    } as Options;
+
     this.callerRequestHeadersRemoval = [];
     this.callerRequestHeaderReplacements = {};
     this.callerRequestBodyReplacement = {};
@@ -368,16 +379,8 @@ export class Servirtium {
         next();
       });
     });
-    const options = {
-      target: this.apiUrl,
-      changeOrigin: true,
-      selfHandleResponse: true,
-      onProxyReq: this._onProxyReq,
-      onProxyRes: this._onProxyRes,
-      onError: this._onError,
-    } as Options;
 
-    app.use("/", createProxyMiddleware(options));
+    app.use("/", createProxyMiddleware(this.proxyMiddlewareOptions));
     this.serverRecord = app.listen(port, callback);
     console.log("Servirtium recording starting on port " + port);
   };
