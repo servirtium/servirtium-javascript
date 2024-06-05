@@ -1,5 +1,16 @@
 import Servirtium from "./servirtium"
 
+describe('default proxy middleware option values can be overriden by injecting them', () => {
+  const servirtium = new Servirtium('http://does-not-matter:1111')
+  let defaultOptions = servirtium["proxyMiddlewareOptions"]
+  expect(defaultOptions).toMatchObject({selfHandleResponse: true, changeOrigin: true, target: 'http://does-not-matter:1111'})
+
+  const servirtiumWithInjectedProxyMiddlewareOptions = new Servirtium('http://does-not-matter:1111', {selfHandleResponse: false, changeOrigin: false})
+  let optionsWithInjectedValues = servirtiumWithInjectedProxyMiddlewareOptions["proxyMiddlewareOptions"]
+  expect(optionsWithInjectedValues).toMatchObject({selfHandleResponse: false, changeOrigin: false, target: 'http://does-not-matter:1111'})
+})
+
+
 describe('Servirtium', () => {
   let servirtium: Servirtium
   beforeEach(() => {
@@ -15,6 +26,7 @@ describe('Servirtium', () => {
     }
     done()
   })
+
 
   describe('setTestName', () => {
     it('should setTestName', () => {
