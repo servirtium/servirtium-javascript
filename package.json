@@ -11,6 +11,7 @@
   ],
   "scripts": {
     "build": "rimraf dist && tsc && cp ./src/template.ejs ./dist",
+    "compile": "tsc",
     "test": "jest",
     "prepare": "yarn build"
   },
@@ -36,7 +37,7 @@
     "jest": "^25.3.0",
     "np": "^6.4.0",
     "rimraf": "^3.0.2",
-    "typescript": "^3.9.7"
+    "typescript": "^5.4.5"
   },
   "jest": {
     "testEnvironment": "node"
